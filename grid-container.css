@@ -1,0 +1,39 @@
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.4fr 1fr 3.5fr 0.2fr 0.6fr 0.3fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "menu"
+    "banner"
+    "content"
+    "blank"
+    "footer"
+    ".";
+}
+
+.banner { grid-area: banner; }
+
+.menu { grid-area: menu; }
+
+.content { grid-area: content; }
+
+.blank { grid-area: blank; }
+
+.footer { grid-area: footer; }
+
+
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.grid-container *:after {
+  content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
