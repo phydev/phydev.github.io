@@ -22,9 +22,16 @@ a {
 .nav-link {
     padding: 5px;
     list-style-type: none;
+    font-size: 14px;
+    font-weight: bold;
 }
 .nav-item{
     list-style-type: none;
+}
+
+.navbar-brand{
+    background-color: #000000;
+    border: 0px;
 }
 
 .container_name {
@@ -147,51 +154,7 @@ main leg {
 
 }
 
-.button {
-    background-color: #372549;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    height: auto;
-    width: 20%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 22px;
-    margin: auto;
-  }
 
-  .input {
-    background-color: #B75D69; /* Green */
-    border: none;
-    border-radius: 6px;
-    color: white;
-    height: auto;
-    width: 20%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 22px;
-    margin: auto;
-  }
-
-  #plotDiv {
-      width: auto;
-      height: auto;
-      border: none;
-      align-self: center;
-      display: block;
-      align-content: center;
-      padding: 5px;
-      margin: 20px auto;
-
-  }
-
-  #plotDiv h2 {
-      text-align: center;
-      margin: 0 auto;
-
-  }
 
 
   #refs {
@@ -233,19 +196,20 @@ bottom {
 
 
 :root {
-  --container-bg-color: #333;
-  --left-bg-color: rgba(223, 39, 39, 0.7);
-  --left-button-hover-color: rgba(161, 11, 11, 0.3);
-  --right-bg-color: rgba(43, 43, 43, 0.8);
-  --right-button-hover-color: rgba(92, 92, 92, 0.3);
+  --container-bg-color: #000000;
   --hover-width: 75%;
   --other-width: 25%;
   --speed: 1000ms;
+
 }
 
 
+.navbar-toggler{
+    background-color: #000000;
+border:none;}
 
 .button {
+    background-color: #000000;
   display: block;
   position: absolute;
   left: 50%;
@@ -254,31 +218,31 @@ bottom {
   padding-top: 1.3rem;
   width: 15rem;
   text-align: center;
-  color: #fff;
-  border: #fff solid 0.2rem;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   transform: translateX(-50%);
+
 }
 
+.nav-link {
+    font-size: 14px;
+}
 .split.left .button:hover {
-  background-color: var(--left-button-hover-color);
-  border-color: var(--left-button-hover-color);
+  background-color: #000000;
 }
 
 .split.right .button:hover {
-  background-color: var(--right-button-hover-color);
-  border-color: var(--right-button-hover-color);
+  background-color: #000000;
 }
 
 .container {
   position: relative;
   width: 100%;
   height: 100%;
-  background: var(--container-bg-color);
     padding: 10px;
+    background-color: #000000;
 }
 
 /*nav{*/
@@ -295,8 +259,7 @@ bottom {
 
 .split.left {
   left:0;
-  background: url('https://image.ibb.co/m56Czw/designer.jpg') center center no-repeat;
-  background-size: cover;
+  background-color: black;
 }
 
 .split.left:before {
@@ -304,7 +267,7 @@ bottom {
   content: "";
   width: 100%;
   height: 100%;
-  background: var(--left-bg-color);
+background-color: black;
 }
 
 
@@ -313,7 +276,7 @@ bottom {
   content: "";
   width: 100%;
   height: 100%;
-  background: var(--right-bg-color);
+background-color: black;
 }
 
 .split.left, .split.right, .split.right:before, .split.left:before {
