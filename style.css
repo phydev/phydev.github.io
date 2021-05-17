@@ -1,39 +1,221 @@
-html, body, .grid-container { height: 100%; margin: 0; }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.4fr 1fr 3.5fr 0.2fr 0.6fr 0.3fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "menu"
-    "banner"
-    "content"
-    "blank"
-    "footer"
-    ".";
+* {
+   box-sizing:border-box;
 }
 
-.banner { grid-area: banner; }
-
-.menu { grid-area: menu; }
-
-.content { grid-area: content; }
-
-.blank { grid-area: blank; }
-
-.footer { grid-area: footer; }
-
-
-/* For presentation only, no need to copy the code below */
-.grid-container * {
-  border: 1px solid red;
-  position: relative;
+body {
+    font-family: 'Avenir Next', sans-serif;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
 }
 
-.grid-container *:after {
-  content:attr(class);
-  position: absolute;
-  top: 0;
-  left: 0;
+a {
+  color: white;
+    font-style: italic;
+}
+
+.container_name {
+    background-color: #000000;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    align-content: end;
+    list-style-type: none;
+    overscroll-behavior-x: none;
+}
+.container_name li a {
+    padding: 5px;
+    margin: auto;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+
+.container {
+    background-color: #000000;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    align-content: end;
+    list-style-type: none;
+    overscroll-behavior-x: none;
+    vertical-align: top;
+}
+
+.container li a {
+    padding: 5px;
+    margin: auto;
+    color: white;
+    text-decoration: none;
+
+}
+
+#main {
+    /* border: red solid 1px; */
+    width: 80%;
+    height: auto;
+    align-self: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+main p {
+    text-align: justify;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+}
+
+h2 {
+    text-align: center;
+    color: #e98789;
+    font-size: 100%;
+}
+
+content {
+    text-align: justify;
+}
+
+main leg {
+    text-align: center;
+    font-style: italic;
+}
+
+#painel {
+    /* border: blue solid 1px; */
+    width: auto;
+    height: auto;
+    justify-content: space-around;
+    align-self: center;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.5; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.select {
+    background-color: #B75D69; /* Green */
+    border: none;
+    border-radius: 6px;
+    color: white;
+    height: auto;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin: auto;
+
+}
+
+.button {
+    background-color: #372549;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    height: auto;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin: auto;
+  }
+
+  .input {
+    background-color: #B75D69; /* Green */
+    border: none;
+    border-radius: 6px;
+    color: white;
+    height: auto;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin: auto;
+  }
+
+  #plotDiv {
+      width: auto;
+      height: auto;
+      border: none;
+      align-self: center;
+      display: block;
+      align-content: center;
+      padding: 5px;
+      margin: 20px auto;
+
+  }
+
+  #plotDiv h2 {
+      text-align: center;
+      margin: 0 auto;
+
+  }
+
+
+  #refs {
+      text-align: left;
+  }
+
+img {
+    display: flex;
+    max-width: 479px;
+    border: 0px solid #FFFFF;
+    border-radius: 4px;
+    padding: 5px;
+
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.container2 {
+	width:100%;
+	height:auto;
+	padding:1%;
+}
+
+.sideby {
+     margin-left:0%;
+    float:left;
+}
+
+
+bottom {
+    color: white;
 }

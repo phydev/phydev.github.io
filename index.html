@@ -1,1 +1,67 @@
-<meta http-equiv="refresh" content="0; URL='https://sites.google.com/view/mmsoares/home'" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Maurício Moreira-Soares</title>
+</head>
+<body>
+<!--<iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>-->
+
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("header.html");
+});
+</script>
+<!--end of Navigation bar-->
+
+
+   <main id="main">
+<!--        <h1>Theory</h1>-->
+
+       <p>I am a physicist trying to understand life through computational biology.
+         I work on the development of mathematical models to describe biological systems,
+         such as: the growing of new blood vessels, cell migration and collective phenomena.
+         For this purpose I employ the laws of physics to the microscopic world studying how mechanical forces affect cells.
+</p>
+     <p>
+As a matter of fact, the study of biological systems require an interdisciplinary approach, bringing together not only physics and biology,
+         but also computer science, biochemistry, mathematics, among others.
+         As result of this scientific community effort, new high quality studies
+         are constantly been published with breakthroughs in health science and systems biology, contributing to improve our knowledge
+         on these challenging fields.</p>
+<!--      <h2>Allen-Cahn Equation</h2>-->
+
+
+<img src="images/angio.png" alt="Four time steps of growing vessels starting from only one vessel." class="center">
+       <img src="images/vegf.png" alt="Four time steps of the growth factor field."  class="center">
+    <leg>  In this figure we show the evolution (from left to right) of the vascular morphology (top row)
+    and of the corresponding VEGF concentration (bottom row) produced by randomly distributed hypoxic cells for a network growing.
+        The value of the VEGF concentration at the hypoxic cells is maintained at Ts (in light green)
+        and reaches zero (in blue) inside the irrigated regions.</leg>
+
+
+
+
+   </main>
+<div id="bottom-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#bottom-placeholder").load("bottom.html");
+});
+</script>
+</body>
+</html>
