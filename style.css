@@ -16,6 +16,17 @@ a {
   color: white;
 }
 
+.navbar{
+    background-color: #000000;
+}
+.nav-link {
+    padding: 5px;
+    list-style-type: none;
+}
+.nav-item{
+    list-style-type: none;
+}
+
 .container_name {
     background-color: #000000;
     height: 50px;
@@ -37,26 +48,26 @@ a {
 }
 
 
-.container {
-    background-color: #000000;
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: end;
-    align-content: end;
-    list-style-type: none;
-    overscroll-behavior-x: none;
-    vertical-align: top;
-}
+/*.container {*/
+/*    background-color: #000000;*/
+/*    height: auto;*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    justify-content: flex-start;*/
+/*    align-items: end;*/
+/*    align-content: end;*/
+/*    list-style-type: none;*/
+/*    overscroll-behavior-x: none;*/
+/*    vertical-align: top;*/
+/*}*/
 
-.container li a {
-    padding: 5px;
-    margin: auto;
-    color: white;
-    text-decoration: none;
+/*.container li a {*/
+/*    padding: 5px;*/
+/*    margin: auto;*/
+/*    color: white;*/
+/*    text-decoration: none;*/
 
-}
+/*}*/
 
 #main {
     /* border: red solid 1px; */
@@ -217,4 +228,135 @@ img {
 
 bottom {
     color: white;
+}
+
+
+
+:root {
+  --container-bg-color: #333;
+  --left-bg-color: rgba(223, 39, 39, 0.7);
+  --left-button-hover-color: rgba(161, 11, 11, 0.3);
+  --right-bg-color: rgba(43, 43, 43, 0.8);
+  --right-button-hover-color: rgba(92, 92, 92, 0.3);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --speed: 1000ms;
+}
+
+
+
+.button {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  height: 2.5rem;
+  padding-top: 1.3rem;
+  width: 15rem;
+  text-align: center;
+  color: #fff;
+  border: #fff solid 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+
+.split.left .button:hover {
+  background-color: var(--left-button-hover-color);
+  border-color: var(--left-button-hover-color);
+}
+
+.split.right .button:hover {
+  background-color: var(--right-button-hover-color);
+  border-color: var(--right-button-hover-color);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--container-bg-color);
+    padding: 10px;
+}
+
+/*nav{*/
+/*position:fixed !important;*/
+/*width:100% !important*/
+/*}*/
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left:0;
+  background: url('https://image.ibb.co/m56Czw/designer.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.split.left:before {
+  position:absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--left-bg-color);
+}
+
+
+.split.right:before {
+  position:absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--right-bg-color);
+}
+
+.split.left, .split.right, .split.right:before, .split.left:before {
+  transition: var(--speed) all ease-in-out;
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-left .right:before {
+  z-index: 2;
+}
+
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.hover-right .left:before {
+  z-index: 2;
+}
+
+@media(max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .button {
+    width: 12rem;
+  }
+}
+
+@media(max-height: 700px) {
+  .button {
+    top: 70%;
+  }
 }
