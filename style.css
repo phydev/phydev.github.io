@@ -13,8 +13,10 @@ body {
 }
 
 a {
-  color: white;
+  color: black;
 }
+
+
 
 .navbar{
     background-color: #000000;
@@ -22,15 +24,19 @@ a {
 .nav-link {
     padding: 5px;
     list-style-type: none;
+    color:white;
     font-size: 14px;
-    font-weight: bold;
+
 }
 .nav-item{
     list-style-type: none;
+    font-weight: bold;
 }
 
 .navbar-brand{
     background-color: #000000;
+    color: white;
+    font-weight: bold;
     border: 0px;
 }
 
@@ -96,9 +102,9 @@ h1 {
 }
 
 h2 {
-    text-align: center;
-    color: #e98789;
-    font-size: 100%;
+    text-align: left;
+    color: black;
+    font-size: 16px;
 }
 
 content {
