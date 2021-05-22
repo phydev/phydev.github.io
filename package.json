@@ -14,7 +14,7 @@
   
 },
   "dependencies": {
-    "techy": "1.2.5"
+    "techy": "^1.2.5"
     
   }
 }
