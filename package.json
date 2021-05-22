@@ -1,0 +1,21 @@
+{
+  "name": "Phydev",
+  "version": "1.0.0",
+  "author": "Maurício Moreira-Soares",
+  "repository": {
+    "type": "git",
+    "github": "phydev/phydev.github.io",
+    "url": "https://github.com/phydev/phydev.github.io.git"
+  },
+  "devDependencies": {
+    "jshint": "^2.6.0",
+    "nyc": "^15.1.0"
+  },
+"scripts": {
+    "test": "nyc mocha script.js",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov"
+},
+  "dependencies": {
+    "bootstrap": "^5.0.1"
+  }
+}
