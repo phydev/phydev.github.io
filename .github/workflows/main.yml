@@ -13,7 +13,6 @@ jobs:
         run: |
           npm install
           npm install techy
-          npm test
           cd articles
           ls
           techy
