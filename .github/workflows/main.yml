@@ -17,5 +17,5 @@ jobs:
         run: |
           cd articles
           ls
-          python3 deploy.py
+          python3 ../deploy.py
 
