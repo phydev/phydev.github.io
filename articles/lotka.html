@@ -1,62 +1,110 @@
+<!--{"title": "Modelo predador presa", "date": "22.05.2021", "title_en": "Predator-Prey model (portuguese)", "status": "show" } -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <title>Maurício Moreira-Soares</title>
+</head>
+<body>
+<!--<iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>-->
+
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("/header.html");
+});
+</script>
+  <main id="main">
 <h1>Modelo predador-presa (Lotka-Volterra)</h1>
-<p>O modelo de preador-presa, ou equações de Lotka-Volterra, foi desenvolvido para simular a dinâmica 
+<p>O modelo de predador-presa, ou equações de Lotka-Volterra, foi desenvolvido para simular a dinâmica
 entre populações de diferentes espécies. O modelo é descrito como um sistema de equações 
 diferenciais ordinárias (ODEs) de primeira ordem não lineares,
-[
-    \begin{aligned}
-        \frac{\dd x}{\dd t} &amp;=&amp; \alpha x - \beta x y \
-        \frac{\dd y}{\dd t} &amp;=&amp;  \delta xy  - \gamma y \, ,
-    \end{aligned}
-]
-onde (x(t)) e (y(t)) representam respectivamente as populações de presas e predadores, 
-\(\alpha$ descreve a taxa de crescimento da população de presas, (\beta) representa a taxa de mortalidade
+$$
+        \frac{\mathrm{d} x}{\mathrm{d} t} = \alpha x - \beta x y \tag(eq1)
+    $$
+    $$
+        \frac{\mathrm{d} y}{\mathrm{d} t} =  \delta xy  - \gamma y \, ,
+$$
+onde \ref{eq1} \(x(t)\) e \(y(t)\) representam respectivamente as populações de presas e predadores,
+\(\alpha\) descreve a taxa de crescimento da população de presas, \(\beta\) representa a taxa de mortalidade
 das presas devido a presença de predadores,
- (\delta) e (\gamma) são as taxas de crescimento e de mortalidade dos predadores nesta ordem.</p>
+\(\delta\) e \(\gamma\) são as taxas de crescimento e de mortalidade dos predadores nesta ordem.</p>
 <h2>Método de integração</h2>
-<p>Existem vários métodos disponíveis para 
- integrar equações diferenciais ordinárias que variam em 
- níveis de complexidade (e.g. Runge-Kutta, métodos implícitos e semi-implícitos, etc). 
- Neste trabalho vamos utilizar um método simples que permite uma 
- implementação rápida, o método de Euler. Considerando que podemos escrever a derivada de 
- uma função temporal $f(t)$ aproximadamente como
-[
-     \frac{\dd f}{\dd t} \approx \frac{ f(t+\delta t) - f(t)}{ \delta t} \, ,
- ]
-onde $\delta t$ é um intervalo de tempo finito suficientemente pequeno $\delta t \ll 1$ 
-para garantir congerg\^encia numérica. Considerando uma ODE do tipo
-[
-    \frac{\dd f }{\dd t} = g(t) \, ,
-]
+<p> Existem vários métodos disponíveis para
+ integrar equações diferenciais ordinárias que variam em
+ níveis de complexidade (e.g. Runge-Kutta, métodos implícitos e semi-implícitos, etc).
+ Neste trabalho vamos utilizar um método simples que permite uma
+ implementação rápida, o método de Euler. Considerando que podemos escrever a derivada de
+ uma função temporal \(f(t)\) aproximadamente como
+$$
+     \frac{\mathrm{d} f}{\mathrm{d} t} \approx \frac{ f(t+\delta t) - f(t)}{ \delta t} \, ,
+ $$
+onde \(\delta t\) é um intervalo de tempo finito suficientemente pequeno \(\delta t \ll 1\)
+para garantir congergência numérica. Considerando uma ODE do tipo
+$$
+    \frac{\mathrm{d} f }{\mathrm{d} t} = g(t) \, ,
+$$
 temos que
-[
+$$
     \frac{ f(t+\delta t) - f(t)}{ \delta t} = g(t) \, ,
-]
-como estamos interessados em obter o valor da  função no passo temporal seguinte $f(t+\delta t)$,
-aplicamos o teorema fundamental do cálculo 
-[
+$$
+como estamos interessados em obter o valor da  função no passo temporal seguinte \(f(t+\delta t)\),
+aplicamos o teorema fundamental do cálculo
+$$
 f(t+\delta t) = f(t) + \delta t \cdot g(t) \, ,
-]
-sendo o erro global associado a este método (\mathcal{O}(\delta t) ). Em resumo, utiliza-se a informação 
-do passo (t) para determinar a evolução do sistema em $t+\delta t$.</p>
+$$
+sendo o erro global associado a este método \(\mathcal{O}(\delta t) \). Em resumo, utiliza-se a informação
+do passo \(t\) para determinar a evolução do sistema em \(t+\delta t\).</p>
 <h2>Implementação computacional</h2>
 <h3>Condições iniciais</h3>
-<p>Para realizar a integração devemos primeiro fixar as condições iniciais (x(t=0)) e (y(t=0)). 
-Experimente diferentes condições e analise os resultados: (x(0) &gt; y(0)), (x(0) = y(0)) e (x(0) &lt; y(0)). 
-Utilize valores da ordem das dezenas (e.g. (x=y=10) ). </p>
+<p>Para realizar a integração devemos primeiro fixar as condições iniciais \(x(t=0)\) e \(y(t=0)\).
+Experimente diferentes condições e analise os resultados: \(x(0) &gt; y(0)\), \(x(0) = y(0)\) e \(x(0) &lt; y(0)\).
+Utilize valores da ordem das dezenas (e.g. \(x=y=10\) ). </p>
 <h3>Parâmetros</h3>
-<p>A tabela~\ref{tab:parameters} apresenta um conjunto de parâmetros 
+<p>A tabela \ref{tab} apresenta um conjunto de parâmetros
 para testar se o código está a funcionar corretamente.  O resultado expectável para este
 conjunto de parâmetros é apresentado na Fig.~\ref{fig:result}.</p>
-<p>| Parameter  | Description                 | Value |
-|------------|-----------------------------|-------|
-| (\alpha)   | Prey growth rate            | 0.5   |
-| (\beta)    | Prey death rate             | 0.2   |
-| (\delta)   | Predator growth rate        | 0.1   |
-| (\gamma)   | Predator natural death rate | 0.2   |
-| (x_0)      | Initial prey population     | 10    |
-| (y_0)      | Initial predator poulation  | 10    |
-| (\delta t) | Time step                   | 0.1   |
-| (T)        | Total time steps            | 1000  |</p>
+
+$$
+    \begin{array}[]{l|c|r} \hline
+        Parameter & \textrm{Description} & Value  \\ \hline\hline
+        \alpha & \textrm{Prey growth rate} & 0.5 \\
+        \beta & \textrm{Prey death rate} &  0.2 \\
+        \delta & \textrm{Predator growth rate} & 0.1 \\
+        \gamma & \textrm{Predator natural death rate} & 0.2 \\
+        x_0 & \textrm{Initial prey population} & 10 \\
+        y_0 & \textrm{Initial predator poulation} & 10 \\
+        \delta t & \textrm{Time step} & 0.1 \\
+        T  & \textrm{Total time steps} & 1000 \\ \hline
+\label{tab}
+    \end{array}
+
+$$
 <p>Utilize uma versão recente de Python ((&gt;= 3.6)) com os packages NumPy, SciPy e matplotlib para gráficos.
-Utilize arrays do NumPy para guardar os valores de (x) e (y) ao longo do tempo, 
+Utilize arrays do NumPy para guardar os valores de \(x \) e \(y \) ao longo do tempo,
 evite a utilização do objeto nativo list pois o custo computacional é mais elevado. </p>
+
+
+   </main>
+<div id="bottom-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#bottom-placeholder").load("/bottom.html");
+});
+</script>
+</body>
+</html>

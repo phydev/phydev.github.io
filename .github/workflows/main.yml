@@ -24,6 +24,6 @@ jobs:
           git config --global user.name "phydev"
           git config --global user.email "mmoreirauc@gmail.com"
           git add -A
-          git commit -m "converting articles md->html"
+          git commit -m "deploying article list"
           git push
 
