@@ -15,5 +15,7 @@ jobs:
 
       - name: Deploy 🚀
         run: |
+          cd articles
+          ls
           python3 deploy.py
 
