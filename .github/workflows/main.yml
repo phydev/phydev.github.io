@@ -18,7 +18,12 @@ jobs:
           cd articles
           ls
           python3 ../deploy.py
-        with:
-          branch: master # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "phydev"
+          git config --global user.email "mmoreirauc@gmail.com"
+          git add -A
+          git commit -m "converting articles md->html"
+          git push
 
