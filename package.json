@@ -8,18 +8,12 @@
     "url": "https://github.com/phydev/phydev.github.io.git"
   },
   "devDependencies": {
-    "jshint": "^2.6.0",
-    "nyc": "^15.1.0"
   },
 "scripts": {
-    "test": "nyc mocha script.js",
-    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov",
-    "build": "app.js"
   
 },
   "dependencies": {
-    "@popperjs/core": "^2.9.2",
-    "bootstrap": "^5.0.1"
+    "techy": "1.2.5"
     
   }
 }
