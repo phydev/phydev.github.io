@@ -2,7 +2,7 @@ import os
 
 extensions = ['html']
 articles = []
-for file in os.listdir('./articles'):
+for file in os.listdir('articles'):
     if any(x in file for x in extensions):
         articles.append(file)
 
