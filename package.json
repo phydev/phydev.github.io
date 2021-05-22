@@ -8,6 +8,7 @@
     "url": "https://github.com/phydev/phydev.github.io.git"
   },
   "devDependencies": {
+    "techy": "1.2.5"
   },
 "scripts": {
   
