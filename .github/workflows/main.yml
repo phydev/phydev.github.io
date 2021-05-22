@@ -15,9 +15,7 @@ jobs:
 
       - name: Deploy 🚀
         run: |
-          cd articles
-          ls
-          python3 ../deploy.py
+          python3 deploy.py
 
       - name: Commit and push changes
         run: |

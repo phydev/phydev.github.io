@@ -2,7 +2,7 @@ import os
 
 extensions = ['html']
 articles = []
-for file in os.listdir('articles'):
+for file in os.listdir('./articles'):
     if any(x in file for x in extensions):
         articles.append(file)
 
@@ -10,7 +10,7 @@ for file in os.listdir('articles'):
 metadata = {}
 pattern = ''
 for n, article in enumerate(articles):
-    link="./articles/"+article
+    link="/articles/"+article
     with open(link) as file:
         line = file.readline()
         metadata[n] = dict(eval(line[4:-4]))
