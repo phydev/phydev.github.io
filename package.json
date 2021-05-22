@@ -14,7 +14,7 @@
 "scripts": {
     "test": "nyc mocha script.js",
     "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov",
-    "build": "script.js"
+    "build": "app.js"
   
 },
   "dependencies": {
