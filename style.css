@@ -21,9 +21,11 @@ a {
 
 .navbar{
     background-color: #000000;
+    padding-bottom: 10px;
+
 }
 .nav-link {
-    padding: 5px;
+    padding: 10px;
     list-style-type: none;
     color:white;
     font-size: 14px;
@@ -37,6 +39,7 @@ a {
 .nav-item{
     list-style-type: none;
     font-weight: bold;
+    padding-bottom: 10px;
 }
 
 .navbar-brand{
@@ -240,6 +243,7 @@ border:none;}
 
 .nav-link {
     font-size: 14px;
+
 }
 .split.left .button:hover {
   background-color: #000000;
