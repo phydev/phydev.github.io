@@ -339,3 +339,8 @@ background-color: black;
     top: 70%;
   }
 }
+
+div.code {
+  width: 400px;
+  margin: auto;
+}
