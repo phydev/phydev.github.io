@@ -343,4 +343,5 @@ background-color: black;
 div.code {
   width: 300px;
   margin: auto;
+    display: none;
 }
