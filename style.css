@@ -348,7 +348,7 @@ div.code {
 
 }
 
-.button {
+.buttonbw {
     width:100px;
     background-color: black;
     color: white;
@@ -356,7 +356,7 @@ div.code {
     transition-duration: 0.4s;
 }
 
-.button:hover {
+.buttonbw:hover {
   background-color: white; /* Green */
   color: black;
 }
