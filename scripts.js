@@ -1,8 +1,8 @@
-function show(div_id) {
-  var x = document.getElementById(div_id);
-  if (x.style.display === "none") {
-    x.style.display = "block";
+function showHide(div_id) {
+  var div = document.getElementById(div_id);
+  if (div.style.display === "none") {
+    div.style.display = "block";
   } else {
-    x.style.display = "none";
+    div.style.display = "none";
   }
 }
