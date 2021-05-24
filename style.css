@@ -345,7 +345,6 @@ div.code {
   width: 300px;
   margin: auto;
     visibility: hidden;
-    padding-bottom: 20px;
 
 }
 
@@ -355,7 +354,7 @@ div.code {
     color: white;
     font-weight: bold;
     transition-duration: 0.4s;
-    padding-bottom: 10px
+   margin-bottom: 10px;
 }
 
 .buttonbw:hover {
