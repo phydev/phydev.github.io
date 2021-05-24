@@ -348,9 +348,15 @@ div.code {
 
 }
 
-button.bw {
+.button {
     width:100px;
     background-color: black;
     color: white;
     font-weight: bold;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: white; /* Green */
+  color: black;
 }
