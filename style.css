@@ -355,6 +355,7 @@ div.code {
     color: white;
     font-weight: bold;
     transition-duration: 0.4s;
+    padding-bottom: 10px
 }
 
 .buttonbw:hover {
