@@ -1,4 +1,4 @@
-<!--{"title": "Introducão à Difusão", "date": "22.05.2021", "title_en": "Introduction to Diffusion", "status": "hidden" } -->
+<!--{"title": "Introducão à Difusão", "date": "22.05.2021", "title_en": "Introduction to Diffusion (portuguese)", "status": "show" } -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +43,7 @@ determinada pelo sentido contrário ao gradiente de concentração do mesmo:
 Em um sistema onde não haja fontes e nem sorvedouros deste químico, a concentração total é conservada e no limite em que
 o tempo vai para infinito a distribuição espacial deste químico se torna homogênea. </p>
 
+
           <p>Na figura abaixo temos um exemplo, Onde iniciamos a simulação com uma alta concentração do químico no centro do sistema e, ao passar do tempo,
           essa concentração espalha-se até atingir o regime permanente onde a distribuição é homogênea: </p>
 
@@ -70,8 +71,25 @@ $$
 $$\label{eq:fick5}
 \partial_t T = D\nabla^2T \,,
 $$
-onde \(T\) é a concentração de fator angiogênico, \(D\) é a constante de difusão e \(\nabla^2\) é o operador laplaciano.
+<p>onde \(T\) é a concentração de fator angiogênico, \(D\) é a constante de difusão e \(\nabla^2\) é o operador laplaciano.</p>
 
+
+      <h1>Implementação computational</h1>
+          <h2>Condições iniciais</h2>
+
+
+            <h2>Parâmetros</h2>
+$$
+    \begin{array}[]{l|c|r} \hline
+        Parameter & \textrm{Description} & Value  \\ \hline\hline
+        D & \textrm{Diffusion coefficient} &  1 \\
+      (L_x, L_y) & \textrm{Simulation box size} &  (50, 50) \\
+        \delta x & \textrm{Lattice spacing} & 1 \\
+        \delta t & \textrm{Time step} & 0.01 \\
+\label{tab}
+    \end{array}
+
+$$
       <h2>Exemplos na literatura</h2>
       <p>A equação de difusão é utilizada com recorrência em simulação de sistemas biológicos. Por exemplo, neste <a href="https://www.nature.com/articles/s41598-018-27034-8" target="_blank" rel="noopener noreferrer">artigo</a> ela aparece na equação (2) para descrever um fator de crescimento dos vasos
         sanguíneos contendo um termo fenomenológico extra que modela o consumo do químico pelos vasos sanguíneos.</p>
