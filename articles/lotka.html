@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script>
+  MathJax = {
+    tex: {
+      tags: 'all'  // should be 'ams', 'none', or 'all'
+    }
+  };
+  </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/scripts.js"></script>
     <link rel="stylesheet" href="/style.css">
@@ -75,7 +82,7 @@ Utilize valores da ordem das dezenas (e.g. \(x=y=10\) ). </p>
 <h2>Parâmetros</h2>
 <p>A tabela \ref{tab} apresenta um conjunto de parâmetros
 para testar se o código está a funcionar corretamente.  O resultado expectável para este
-conjunto de parâmetros é apresentado na Fig.~\ref{fig:result}.</p>
+conjunto de parâmetros é apresentado na Fig. \ref{fig:result}.</p>
 
 $$
     \begin{array}[]{l|c|r} \hline
@@ -92,12 +99,15 @@ $$
     \end{array}
 
 $$
-<p>Utilize uma versão recente de Python ((&gt;= 3.6)) com os packages NumPy, SciPy e matplotlib para gráficos.
-Utilize arrays do NumPy para guardar os valores de \(x \) e \(y \) ao longo do tempo,
-evite a utilização do objeto nativo list pois o custo computacional é mais elevado. </p>
+      <p>Na figura abaixo vemos o resultado para um conjunto de parâmetros que originam um comportamento oscilatório das duas populações.</p>
+      <img src="/articles/figs/lotka_oscilation.png" alt="Gráfico com oscilacao das populacoes ao longo do tempo." class="center">
 
 
       <h2> Código </h2>
+      <p>Utilize uma versão recente de Python ((&gt;= 3.6)) com os packages NumPy, SciPy e matplotlib para gráficos.
+Utilize arrays do NumPy para guardar os valores de \(x \) e \(y \) ao longo do tempo,
+evite a utilização do objeto nativo list pois o custo computacional é mais elevado. </p>
+
       <button class="buttonbw" onclick="showHide('lotka.code')">Mostrar</button>
       <div class="div.code" style="display:none;" id="lotka.code">
         <script src="https://gist.github.com/phydev/8e4646a4cd231fcafbcaecb15b0a6a37.js"></script>
