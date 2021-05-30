@@ -10,7 +10,7 @@ def generateIndex(folder, output, extensions = ['html']):
 
     metadata = {}
     pattern = {}
-    n = 0
+    article_number = 0
     for n, article in enumerate(articles):
         link="/"+folder+"/"+article
         with open("."+link) as file:
@@ -19,12 +19,12 @@ def generateIndex(folder, output, extensions = ['html']):
         metadata[n]['link'] = link
 
         if metadata[n]['status'] == 'show':
-            pattern[metadata[n]["order"]] = "<p><a href='"+metadata[n]['link']+"'> "+ metadata[n]["order"] + metadata[n]["title"]+" </a></p> \n"
-            n = n+1
+            pattern[metadata[n]["order"]] = "<p><a href='"+metadata[n]['link']+"'> "+ metadata[n]["order"] + metadata[n]["title"]+" </a></p>"
+            article_number +=1
 
     with open(output, "w") as file:
-        for i in range(n):
-            file.write(pattern[str(n)])
+        for line in range(article_number):
+            file.write(pattern[str(line)])
 
 
 generateIndex(folder="articles", output="articles.html")
