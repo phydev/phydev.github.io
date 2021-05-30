@@ -18,7 +18,7 @@ def generateIndex(folder, output, extensions = ['html']):
         metadata[n]['link'] = link
 
         if metadata[n]['status'] == 'show':
-            pattern += "<p><a href='"+metadata[n]['link']+"'> "+ metadata[n]['title_en']+" </a></p> \n"
+            pattern += "<p><a href='"+metadata[n]['link']+"'> "+ metadata[n]["title"]+" </a></p> \n"
 
 
     with open(output, "w") as file:
