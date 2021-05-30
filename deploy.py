@@ -20,7 +20,7 @@ def generateIndex(folder, output, extensions = ['html']):
         metadata[n]['link'] = link
         
         if metadata[n]['status'] == 'show':
-            patterns[metadata[n]["order"]] = "<p><a href='"+metadata[n]['link']+"'> "+ metadata[n]["order"]+ " - " + metadata[n]["title"]+" </a></p>"
+            patterns[metadata[n]["order"]] = "<p><a href='"+metadata[n]['link']+"'> "+ str(metadata[n]["order"])+ " - " + metadata[n]["title"]+" </a></p>"
             article_number +=1
 
     with open(output, "w") as file:
