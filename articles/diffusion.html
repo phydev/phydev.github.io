@@ -71,25 +71,31 @@ $$
 $$\label{eq:fick5}
 \partial_t T = D\nabla^2T \,,
 $$
-<p>onde \(T\) é a concentração de fator angiogênico, \(D\) é a constante de difusão e \(\nabla^2\) é o operador laplaciano.</p>
+<p>onde \(T\) é a concentração, \(D\) é a constante de difusão e \(\nabla^2\) é o operador laplaciano.</p>
 
 
-      <h1>Implementação computational</h1>
-          <h2>Condições iniciais</h2>
+<h1>Implementação computational</h1>
+  
+  <h2> Discretização espacial & derivadas</h2>
+  <p>Para integrarmos equações diferenciais parciais (EDPs) devemos discretizar a componente
+  espacial, dividir </p>
 
 
-            <h2>Parâmetros</h2>
-$$
-    \begin{array}[]{l|c|r} \hline
-        Parameter & \textrm{Description} & Value  \\ \hline\hline
-        D & \textrm{Diffusion coefficient} &  1 \\
-      (L_x, L_y) & \textrm{Simulation box size} &  (50, 50) \\
-        \delta x & \textrm{Lattice spacing} & 1 \\
-        \delta t & \textrm{Time step} & 0.01 \\
-\label{tab}
-    \end{array}
-
-$$
+  <img src="/articles/figs/mesh.png" alt="Descrição esquemática do cálculo do laplaciano." class="center">
+  
+  <h2>Condições iniciais</h2>
+  
+  <h2>Parâmetros</h2>
+    $$
+        \begin{array}[]{l|c|r} \hline
+        \textrm{Par\^ametros} & \textrm{Descri\c{c}\~ao} & Valor  \\ \hline\hline
+            D & \textrm{Diffusion coefficient} &  1 \\
+          (L_x, L_y) & \textrm{Dimensões da caixa} &  (50, 50) \\
+            h & \textrm{Espaçamento da rede} & 1 \\
+            \delta t & \textrm{Passo temporal} & 0.01 \\
+        \label{tab}
+        \end{array}        
+    $$
       <h2>Exemplos na literatura</h2>
       <p>A equação de difusão é utilizada com recorrência em simulação de sistemas biológicos. Por exemplo, neste <a href="https://www.nature.com/articles/s41598-018-27034-8" target="_blank" rel="noopener noreferrer">artigo</a> ela aparece na equação (2) para descrever um fator de crescimento dos vasos
         sanguíneos contendo um termo fenomenológico extra que modela o consumo do químico pelos vasos sanguíneos.</p>
