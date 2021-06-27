@@ -80,9 +80,14 @@ $$
   <p>Para integrarmos equações diferenciais parciais (EDPs) 
     devemos discretizar o espaço, ou seja, a nossa caixa de simulação
   é definida pela divisão do espaço contínuo em pontos com uma separação
-  fixa entre eles (parâmetro de rede \(h \)). </p>
+  fixa<a class="footnote">&sup1<span> Existe uma classe de algoritmos chamados de redes adaptativas (adaptative mesh), onde o parâmetro de rede é variável, mas não iremos abordá-los aqui. </span></a> entre eles (parâmetro de rede \(h \)). </p>
 
-  <img src="/resources/figs/discretization.png" alt="Discretização espacial." class="center">
+  <p> Por exemplo, na figura abaixo temos uma caixa de simulação bidimensional com dimensões 
+    \( 45 \times 45 \, \mathrm{u. a.} \)<a class="footnote">&sup2<span>\(\mathrm{u. a.} \) é o acrónimo utilizado para unidades arbitrárias, ou em inglês \(\mathrm{a. u.} \). </span></a>
+    Se utilizarmos um parâmetro de rede \(h = 5\)
+  </p>
+
+  <img src="/resources/figs/grid5x5.png" alt="Discretização espacial." class="center">
   
 
   <img src="/resources/figs/mesh.png" alt="Descrição esquemática do cálculo do laplaciano." class="center">
