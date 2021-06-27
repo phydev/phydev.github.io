@@ -80,18 +80,32 @@ $$
   <p>Para integrarmos equações diferenciais parciais (EDPs) 
     devemos discretizar o espaço, ou seja, a nossa caixa de simulação
   é definida pela divisão do espaço contínuo em pontos com uma separação
-  fixa<a class="footnote">&sup1<span> Existe uma classe de algoritmos chamados de redes adaptativas (adaptative mesh), onde o parâmetro de rede é variável, mas não iremos abordá-los aqui. </span></a> entre eles (parâmetro de rede \(h \)). </p>
+  fixa<a class="footnote">&sup1<span> Existe uma classe de algoritmos chamada de redes adaptativas (adaptive-mesh), onde o parâmetro de rede é variável, mas não iremos abordá-los aqui. </span></a> entre eles (parâmetro de rede ou espaçamento de rede \(h \)). </p>
 
   <p> Por exemplo, na figura abaixo temos uma caixa de simulação bidimensional com dimensões 
-    \( 45 \times 45 \, \mathrm{u. a.} \)<a class="footnote">&sup2<span>\(\mathrm{u. a.} \) é o acrónimo utilizado para unidades arbitrárias, ou em inglês \(\mathrm{a. u.} \). </span></a>
-    Se utilizarmos um parâmetro de rede \(h = 5\)
+    \( 30 \times 30 \, \mathrm{u. a.} \)<a class="footnote">&sup2<span>\(\mathrm{u. a.} \) é o acrónimo utilizado para unidades arbitrárias, ou em inglês \(\mathrm{a. u.} \). </span></a>.
+    Se utilizarmos um parâmetro de rede  \(h = 5\), teremos uma caixa com 7 pontos em cada dimensão e 45 pontos no total. 
+  </p>
+  <img src="/resources/figs/grid5x5.png" alt="Discretização espacial." class="center" style="width:30%">
+  
+
+  <p>  
+    No caso do modelo de difusão teremos uma função espacial e temporal 
+    \( c(x,y,t) \,\forall \,\{x, y, t\}\in \mathbb{R}  \)
+    que será então integrada neste espaço discreto. Assim, passamos a representar essa função
+    pelos índices \( (i, j, n) \, \in \mathbb{N} \) que identificam as duas coordenadas espaciais
+    e a iteração temporal, respectivamente: assim,
+    \( c(x,y,t) \,\longrightarrow\,  c_{i,j}^n \) .
   </p>
 
-  <img src="/resources/figs/grid5x5.png" alt="Discretização espacial." class="center">
-  
+
+  <p> Assim, as derivadas espaciais são obtidas com base nos vizinhos do ponto em que 
+    a derivada é calculada. Na imagem abaixo mostramos que    </p>
 
   <img src="/resources/figs/mesh.png" alt="Descrição esquemática do cálculo do laplaciano." class="center">
   
+ <h2> Condições de fronteiras<a class="footnote">&sup3<span>Também conhecidas como condições de contorno. </span></a>  </h2> 
+
   <h2>Condições iniciais</h2>
   
   <h2>Parâmetros</h2>
@@ -108,6 +122,9 @@ $$
       <h2>Exemplos na literatura</h2>
       <p>A equação de difusão é utilizada com recorrência em simulação de sistemas biológicos. Por exemplo, neste <a href="https://www.nature.com/articles/s41598-018-27034-8" target="_blank" rel="noopener noreferrer">artigo</a> ela aparece na equação (2) para descrever um fator de crescimento dos vasos
         sanguíneos contendo um termo fenomenológico extra que modela o consumo do químico pelos vasos sanguíneos.</p>
+
+       <h2> Referências </h2>
+       <a href="https://en.wikipedia.org/wiki/Finite_difference_coefficient" target="_blank" rel="noopener noreferrer" >Finite difference coefficients </a>
 
       <h2> Código </h2>
       <button class="buttonbw" onclick="showHide('lotka.code')">Mostrar</button>
