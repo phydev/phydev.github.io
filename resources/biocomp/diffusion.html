@@ -94,13 +94,17 @@ $$
     \( c(x,y,t) \,\forall \,\{x, y, t\}\in \mathbb{R}  \)
     que será então integrada neste espaço discreto. Assim, passamos a representar essa função
     pelos índices \( (i, j, n) \, \in \mathbb{N} \) que identificam as duas coordenadas espaciais
-    e a iteração temporal, respectivamente: assim,
+    e a iteração temporal, respectivamente: 
     \( c(x,y,t) \,\longrightarrow\,  c_{i,j}^n \) .
   </p>
 
 
   <p> Assim, as derivadas espaciais são obtidas com base nos vizinhos do ponto em que 
-    a derivada é calculada. Na imagem abaixo mostramos que    </p>
+    a derivada é calculada. Na imagem abaixo mostramos quais os valores do passo 
+    temporal \( n \) são utilizados para calcular o valor da função em \(n+1\)
+     para uma função \( \phi(x,t) \) 
+    definida em um espaço unidimensional (por isso temos apenas o índice \(i\)). 
+  Neste caso utilizamos apenas os primeiros vizinhos  </p>
 
   <img src="/resources/figs/mesh.png" alt="Descrição esquemática do cálculo do laplaciano." class="center">
   
