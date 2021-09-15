@@ -40,7 +40,7 @@ aplicamos o teorema fundamental do cálculo
 \[
 f(t+\delta t) = f(t) + \delta t \cdot g(t) \, ,
 \]
-sendo o erro global associado a este método \(\mathcal{O}(\delta t^2) \). Em resumo, utiliza-se a informação 
+sendo o erro global associado a este método \(\mathcal{O}(\delta t) \). Em resumo, utiliza-se a informação 
 do passo \(t\) para determinar a evolução do sistema em $t+\delta t$.
 
 
