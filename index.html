@@ -76,6 +76,17 @@ $(function(){
 </div>
 
 <script>
+    // Function to format date as "1st June 2023"
+    function formatDate(dateStr) {
+      const date = new Date(dateStr);
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = date.toLocaleDateString('en-US', options);
+      return formattedDate.replace(/\d+(?=\s\w+$)/, match => {
+        return match + (match == 1 ? 'st' : (match == 2 ? 'nd' : (match == 3 ? 'rd' : 'th')));
+      });
+    }
+
+
   // Fetch the JSON data
   fetch('meetings.json')
     .then(response => response.json())
@@ -96,8 +107,9 @@ $(function(){
         link.href = event.link;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
-        link.textContent = `${event.title} (${event.start_date} - ${event.end_date})`;
-
+        // link.textContent = `${event.title} (${event.start_date} - ${event.end_date})`;
+        link.textContent = `${formatDate(event.start_date)}`;
+        
         if (new Date(event.end_date) < currentDate) {
           pastList.appendChild(li);
         } else {
