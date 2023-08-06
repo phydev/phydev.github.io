@@ -108,8 +108,8 @@ $(function(){
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         // link.textContent = `${event.title} (${event.start_date} - ${event.end_date})`;
-        link.textContent = `${formatDate(event.start_date)}`;
-        
+        link.textContent = `${event.title} - ${formatDate(event.start_date)}`;
+
         if (new Date(event.end_date) < currentDate) {
           pastList.appendChild(li);
         } else {
