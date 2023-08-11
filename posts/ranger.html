@@ -19,6 +19,41 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/scripts.js"></script>
     <link rel="stylesheet" href="/style.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: none;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .top-bar, .middle-bar, .bottom-bar {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .middle-bar {
+            background-color: #333;
+            padding: 5px;
+        }
+
+        .bottom-bar {
+            background-color: #4CAF50;
+            padding: 10px;
+        }
+    </style>
     <title>Maurício Moreira-Soares</title>
 </head>
 <body>
@@ -39,15 +74,86 @@ $(function(){
   <main id="main">
 <h1>A cautionary tale on imputation with random forest</h1>
 
+<h2>Introduction</h2>
 <p> Missing data is ubiquitous in data science and has the potential to significantly impact results if not handled properly. Historically, three primary mechanisms for missing data have been defined: </p>
 
-<ul> Missing completely at random (MCAR): the probability of missingness is the same for all observations. </ul>
-<ul> Missing at random (MAR): the probability of missingness depends on observed variables. </ul>
-<ul> Missing not at random (MNAR): the probability of missingness depends on unobserved variables. </ul>
+<ul> 
+    <li> Missing completely at random (MCAR): the probability of missingness is the same for all observations. </li>
+    <li> Missing at random (MAR): the probability of missingness depends on observed variables. </li>
+    <li> Missing not at random (MNAR): the probability of missingness depends on unobserved variables. 
+
+</ul>
 
 <p>However, with the rise of big data and increased interoperability, new types of missingness have emerged that do not fit into this traditional classification. One such type is <a href="https://www.nature.com/articles/s42256-022-00596-z#Bib1" target="_blank" rel="noopener noreferrer">structured missingness</a><a class="footnote">&sup1<span>Mitra, R., McGough, S.F., Chakraborti, T. et al. Learning from data with structured missingness. Nat Mach Intell 5, 13–23 (2023). https://doi.org/10.1038/s42256-022-00596-z</span></a>, which occurs when datasets with different sets of variables are integrated.</p>
 
-<p>We generated 100 datasets, each containing 1000 data points. The data points are generated according to a linear model with specified means, standard deviations, coefficients, and R-squared value. The variables x1 and x2 are uncorrelated, and there are no additional uncorrelated variables included in the dataset. The resulting datasets can be used for various statistical analyses and modeling experiments. <p>
+
+<h2>Simulation</h2>
+
+<p>We generated 3 sets of 100 datasets, each containing 1000 data points, with covariates \( (x_1, x_2) \) drawn from a bivariate distribution of means \( \vec{\mu }= (1, 80) \) and standard deviations \( \vec{\sigma} = (10, 30)  \). The covariates are uncorrelated with \( \rho = 0 \). The response is given by \( y \equiv \beta_0  + \beta_1 x_1 + \beta_2 x_2 + \varepsilon \) with \( \vec{\beta} = (0, 1.0, -0.3) \). We control the coefficient of determination by tuning the amount of the gaussian noise \( \varepsilon = \mathcal{N}(0,\,\sigma_{\varepsilon}^{2})\) </p>
+
+<p> </p>
+    
+<p>The data points are generated according to a linear model with specified means, standard deviations, coefficients, and R-squared value. The variables x1 and x2 are uncorrelated, and there are no additional uncorrelated variables included in the dataset. The resulting datasets can be used for various statistical analyses and modeling experiments. <p>
+
+
+
+
+    
+    <table>
+        <tr>
+            <th>Dataset ID</th>
+            <th>Missing rate</th>
+            <th>R2</th>
+        </tr>
+        <tr>
+            <td>curie</td>
+            <td>0.2</td>
+            <td>0.2</td>
+        </tr>
+        <tr>
+            <td>newton</td>
+            <td>0.5</td>
+            <td>0.2</td>
+        </tr>
+        <tr>
+            <td>lovelace</td>
+            <td>0.8</td>
+            <td>0.2</td>
+        </tr>
+        <tr>
+            <td>fermi</td>
+            <td>0.2</td>
+            <td>0.5</td>
+        </tr>
+        <tr>
+            <td>dirac</td>
+            <td>0.5</td>
+            <td>0.5</td>
+        </tr>
+        <tr>
+            <td>noether</td>
+            <td>0.8</td>
+            <td>0.5</td>
+        </tr>
+        <tr>
+            <td>born</td>
+            <td>0.2</td>
+            <td>0.8</td>
+        </tr>
+        <tr>
+            <td>oppenheimer</td>
+            <td>0.5</td>
+            <td>0.8</td>
+        </tr>
+        <tr>
+            <td>feynman</td>
+            <td>0.8</td>
+            <td>0.8</td>
+        </tr>
+    </table>
+    
+ 
+
 
 </main>
 
