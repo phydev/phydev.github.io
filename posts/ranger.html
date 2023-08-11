@@ -1,0 +1,61 @@
+<!--{"title": "A cautionary tale on imputation with random forest", "date": "10-08-2023", "title_en": "A cautionary tale on imputation with random forest", "status": "hidden", "order": "0"} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script>
+  MathJax = {
+    tex: {
+      tags: 'all'  // should be 'ams', 'none', or 'all'
+    }
+  };
+  </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/scripts.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <title>Maurício Moreira-Soares</title>
+</head>
+<body>
+<!--<iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>-->
+
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("/header.html");
+});
+</script>
+  <main id="main">
+<h1>A cautionary tale on imputation with random forest</h1>
+
+<p> Missing data is ubiquitous in data science and has the potential to significantly impact results if not handled properly. Historically, three primary mechanisms for missing data have been defined: </p>
+
+<ul> Missing completely at random (MCAR): the probability of missingness is the same for all observations. </ul>
+<ul> Missing at random (MAR): the probability of missingness depends on observed variables. </ul>
+<ul> Missing not at random (MNAR): the probability of missingness depends on unobserved variables. </ul>
+
+<p>However, with the rise of big data and increased interoperability, new types of missingness have emerged that do not fit into this traditional classification. One such type is <a href="https://www.nature.com/articles/s42256-022-00596-z#Bib1" target="_blank" rel="noopener noreferrer">structured missingness</a><a class="footnote">&sup1<span>Mitra, R., McGough, S.F., Chakraborti, T. et al. Learning from data with structured missingness. Nat Mach Intell 5, 13–23 (2023). https://doi.org/10.1038/s42256-022-00596-z </span></a>, which occurs when datasets with different sets of variables are integrated.</p>
+
+<p>We generated 100 datasets, each containing 1000 data points. The data points are generated according to a linear model with specified means, standard deviations, coefficients, and R-squared value. The variables x1 and x2 are uncorrelated, and there are no additional uncorrelated variables included in the dataset. The resulting datasets can be used for various statistical analyses and modeling experiments. <p>
+
+    
+
+<div id="bottom-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#bottom-placeholder").load("/bottom.html");
+});
+</script>
+</body>
+</html>
