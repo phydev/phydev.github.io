@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <base href="https://phydev.github.io/">
       <script>
   MathJax = {
     tex: {
@@ -84,26 +84,45 @@ $(function(){
 
 </ul>
 
-<p>However, with the rise of big data and increased interoperability, new types of missingness have emerged that do not fit into this traditional classification. One such type is <a href="https://www.nature.com/articles/s42256-022-00596-z#Bib1" target="_blank" rel="noopener noreferrer">structured missingness</a><a class="footnote">&sup1<span>Mitra, R., McGough, S.F., Chakraborti, T. et al. Learning from data with structured missingness. Nat Mach Intell 5, 13–23 (2023). https://doi.org/10.1038/s42256-022-00596-z</span></a>, which occurs when datasets with different sets of variables are integrated.</p>
+<p>As a side note, with the rise of big data and increased interoperability, new types of missingness have emerged that do not fit into this traditional classification. One such type is <a href="https://www.nature.com/articles/s42256-022-00596-z#Bib1" target="_blank" rel="noopener noreferrer">structured missingness</a><a class="footnote">&sup1<span>Mitra, R., McGough, S.F., Chakraborti, T. et al. Learning from data with structured missingness. Nat Mach Intell 5, 13–23 (2023). https://doi.org/10.1038/s42256-022-00596-z</span></a>, which occurs when datasets with different sets of variables are integrated.</p>
 
+<p>Several methods are available for handling missing data, each with its particular strengths and weaknesses, such as mean and median imputation, missing indicator method, regression imputation, among many others. In this study we will focus only on two methods, the gold standard multiple imputation by chained equations (MICE) implemented in the R package "MICE" and the machine learning based method <i>fast imputation with random forest</i> "miceRanger" package.</p>
+
+<p>Both methods featured here use multiple imputation, but they differ significantly in two aspects. First, MICE uses a linear regression model to impute missing values, while miceRanger uses a random forest model. Second, MICE uses Gibbs sampler with Markov Chain Monte Carlo (MCMC) for sampling the joint distribution, while miceRanger uses empirical cumulative distribution function (ECDF) for sampling. The latter is a more robust approach as it attempts to model the whole joint distribution of the data.</p>
+
+<p>The first aspect means that because of the nature of random forest, miceRanger allows the introduction of non-linearities and agnostic interactions during the imputation process. This comes with the price of a higher sample size requirement for reducing overfitting and a higher number of hyperparameters to be tuned for the imputation. </p>
 
 <h2>Simulation</h2>
 
-<p>We generated 3 sets of 100 datasets, each containing 1000 data points, with covariates \( (x_1, x_2) \) drawn from a bivariate distribution of means \( \vec{\mu }= (1, 80) \) and standard deviations \( \vec{\sigma} = (10, 30)  \). The covariates are uncorrelated with \( \rho = 0 \). The response is given by \( y \equiv \beta_0  + \beta_1 x_1 + \beta_2 x_2 + \varepsilon \) with \( \vec{\beta} = (0, 1.0, -0.3) \). We control the coefficient of determination by tuning the amount of the gaussian noise \( \varepsilon = \mathcal{N}(0,\,\sigma_{\varepsilon}^{2})\) </p>
+<p>We generated three sets of 100 datasets, each containing 1000 data points, with covariates \( (x_1, x_2) \) drawn from a bivariate distribution of means \( \vec{\mu }= (1, 80) \), standard deviations \( \vec{\sigma} = (10, 30)  \) and covariates correlation \( \rho = 0 \), giving the following variance-covariance matrix:</p>
 
-<p> </p>
+<p> <center> \( \Sigma =  \begin{bmatrix} 100 & 0 \\ 0 & 900 \end{bmatrix} \) </center></p>
     
-<p>The data points are generated according to a linear model with specified means, standard deviations, coefficients, and R-squared value. The variables x1 and x2 are uncorrelated, and there are no additional uncorrelated variables included in the dataset. The resulting datasets can be used for various statistical analyses and modeling experiments. <p>
+<p>The response is given by \( y \equiv \beta_0  + \beta_1 x_1 + \beta_2 x_2 + \varepsilon \) with \( \vec{\beta} = (0, 1, -0.3) \). We control the coefficient of determination \(R^2\) by tuning the amount of gaussian noise \( \varepsilon \sim \mathcal{N}(0,\,\sigma_{\varepsilon}^{2})\) in the model. The three complete sets of data provide linear models with \(\hat{R^2} = (0.2, 0.5, 0.8) \) respectively. In summary, the data points are generated according to a linear model with specified means, standard deviations, coefficients, and \( R^2 \) value.</p>
+
+<center>
+    <img src="/posts/figs/pairplot.png" alt="Pairplot" class="center" style="width:40%">    
+    <caption> Figure 1: Pairplot showing the  .</caption>
+    </center>
+
+
+<p> We then apply amputation to introduce missing values in the simulated data using the MCAR mechanism. For each dataset we create three different versions with missing rates of \(0.2\), \(0.5\) and \(0.8\), accounting for 900 datasets in total. In Figure 1 we show the missing pattern used to generate the amputed data, only one missing variable is allowed per observation. In Table 1 we summarise the different conditions explored in this study.</p>
+<center>
+<img src="/posts/figs/missing_pattern.png" alt="Missing pattern used in the data. Only one variable is missing per observation." class="center" style="width:40%">    
+<caption> Figure 2: Missing patterns used in the amputation. Only one missing variable per observation is allowed.</caption>
+</center>
+<p>  </p>
 
 
 
 
     
     <table>
+        <caption>Table 1: Datasets with different missing rates and \(R^2\) values. In total we have 9 conditions with 100 replicates each.</caption>
         <tr>
             <th>Dataset ID</th>
             <th>Missing rate</th>
-            <th>R2</th>
+            <th>\(R^2 \)</th>
         </tr>
         <tr>
             <td>curie</td>
@@ -152,10 +171,28 @@ $(function(){
         </tr>
     </table>
     
- 
 
+
+  
+    <center> <img src="/posts/figs/mice_results.png" alt="Results with mice" class="center" style="width:40%"> 
+    <caption> Figure 3: Coefficient of determination for each of the 9 conditions and the 95% confidence intervals. </caption>
+</center>
+<center>
+    <img src="/posts/figs/ranger_results.png" alt="Results with miceRanger." class="center" style="width:40%">
+    <caption> Figure 4:  </caption>
+</center>
+
+    <h2>Discussion</h2>
+
+    <h2>Conclusion</h2>
+
+   <p> Machine learning-based imputation methods require a higher effort on hyperparametrization to work properly when compared to tratidional methods, i.e. without introducing spurious correlation and biases in the estimates. In this study we showed that the random forest based method miceRanger is more sensitive to hyperparameters than the linear regression based method MICE. This is particularly true for datasets with low \(R^2\) values and high missing rate, where the random forest method is unable to provide imputations without introducing a high amount of bias in the estimates.</p>
+
+<h2>References</h2>
 
 </main>
+
+
 
 <div id="bottom-placeholder">
 
