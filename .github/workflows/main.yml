@@ -12,6 +12,10 @@ jobs:
       - name: Install and Build 🔧
         run: |
           pip3 --version
+      
+      - name: Print CV
+        run: |
+          python cv/print_cv.py
 
       - name: Deploy 🚀
         run: |

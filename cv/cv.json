@@ -1,0 +1,518 @@
+{
+    "personal":{
+        "name":"Maurício",
+        "surname":"Moreira Soares",
+        "title":"Data scientist"
+    },
+    "education":[
+        {
+            "institution":{
+                "name_en":"University of Coimbra",
+                "name_native":"Universidade de Coimbra",
+                "acronym":"UC",
+                "location":{
+                    "city":"Coimbra",
+                    "country":"Portugal"
+                }
+            },
+            "start_date":"2010-09-01",
+            "end_date":"2012-07-01",
+            "degree":"Bsc.",
+            "subject":"Physics",
+            "advisors":[
+                "Prof. Alexandre Diehl"
+            ]
+        },
+        {
+            "institution":{
+                "name_en":"Federal University of Pelotas",
+                "name_native":"Universidade Federal de Pelotas",
+                "acronym":"UFPel",
+                "location":{
+                    "city":"Pelotas",
+                    "country":"Brazil"
+                }
+            },
+            "start_date":"2009-03-01",
+            "end_date":"2013-01-01",
+            "degree":"Licenciatura",
+            "subject":"Physics",
+            "advisors":[
+                "Prof. Alexandre Diehl"
+            ]
+        },
+        {
+            "institution":{
+                "name_en":"Federal University of Pelotas",
+                "name_native":"Universidade Federal de Pelotas",
+                "acronym":"UFPel",
+                "location":{
+                    "city":"Pelotas",
+                    "country":"Brazil"
+                }
+            },
+            "start_date":"2013-04-01",
+            "end_date":"2015-03-31",
+            "degree":"MSc.",
+            "subject":"Physics",
+            "advisors":[
+                "Prof. Alexandre Diehl",
+                "Prof. Rui Travasso"
+            ]
+        },
+        {
+            "institution":{
+                "name_en":"University of Coimbra",
+                "name_native":"Universidade de Coimbra",
+                "acronym":"UC",
+                "location":{
+                    "city":"Coimbra",
+                    "country":"Portugal"
+                }
+            },
+            "start_date":"2015-09-01",
+            "end_date":"2020-07-01",
+            "degree":"PhD.",
+            "subject":"Computational Physics",
+            "advisors":[
+                "Prof. Rui Travasso"
+            ]
+        }
+    ],
+    "tasks": [
+        {
+            "description": "Project administrator for HPC resources and sensitive data",
+            "projects": ["bd4qol", "supertreat"]
+        },
+        {
+            "description": "Applied and granted ethical approval from Helse Sør-Øst",
+            "projects": ["supertreat"]
+        },
+        {
+            "description": "Delivered descriptive statistics, internal reports and a manuscript",
+            "projects": ["bd4qol", "supertreat"]
+        },
+        {
+            "description": "Developed prediction models for overall survival",
+            "projects": ["bd4qol", "supertreat"]
+        },
+        {
+            "description": "Built a NoSQL database using MongoDB",
+            "projects": ["supertreat"]
+        },
+        {
+            "description": "Deployed 48 prediction models by developing a Python API with SWAGGER",
+            "projects": ["supertreat"]
+        }
+    ],
+    "projects": {
+        "bd4qol": {
+            "title": "Big Data Models and Intelligent tools for Quality of Life monitoring and participatory empowerment of head and neck cancer survivors",
+            "acronym": "BD4QoL"
+        },
+        "supertreat": {
+            "title": "Supporting Personalized Treatment Decisions in Head and Neck Cancer through Big Data",
+            "acronym": "SuPerTreat"
+        }
+    },
+    "publications":[
+        {
+            "title": "The ECM and tissue architecture are major determinants of early invasion mediated by E-cadherin dysfunction",
+            "authors": "S. Melo , P. Guerrero , M. Moreira Soares , J. R. Bordin , F. Carneiro , P. Carneiro , M. Beatriz Dias , J. Carvalho , J. Figueiredo , R. Seruca",
+            "description": "Germline mutations of E-cadherin cause Hereditary Diffuse Gastric Cancer (HDGC), a highly invasive cancer syndrome characterised by the occurrence of diffuse-type gastric carcinoma and lobular breast cancer. We used vitro assays and mathematical models to show that defective cell-to-cell links, abnormal ECM interaction, and the structure of gastric glands contribute to increased cancer cell invasion.",
+            "type": "article",
+            "date": "2023",
+            "publisher": "Communications Biology",
+            "url": "",
+            "pre-print": "",
+            "id": "gastric2023"
+            
+        },
+        {
+            "title": "TrajPy: empowering feature engineering for trajectory analysis across domains",
+            "authors": "M. Moreira-Soares, E. H. Mossmann, R. D. M. Travasso, J. R. Bordin",
+            "description": "This submission presents TrajPy, an open-source Python package that empowers feature engineering for trajectory analysis across different domains. TrajPy provides users with a set of optimized algorithms and metrics for trajectory clustering, classification, and visualization, allowing the identification of patterns and trends that are often overlooked by traditional methods. The package is user-friendly and flexible, allowing customization and integration with other Python libraries. TrajPy is expected to become a valuable tool for research in multiple fields, including biology, computer science, and social sciences.",
+            "type": "article",
+            "date": "2023",
+            "publisher": "arxiv",
+            "url": "",
+            "pre-print": "https://arxiv.org/abs/2308.11309",
+            "id": "trajpy2023"
+         },
+        {
+            "title": "A multicenter randomized trial for quality of life evaluation by non-invasive intelligent tools during post-curative treatment follow-up for head and neck cancer: Clinical study protocol",
+            "authors": "S. Cavalieri, C. Vener, M. LeBlanc, L. Lopez-Perez, G. Fico, C. Resteghini, D. Monzani, G. Marton, G. Pravettoni, M. Moreira-Soares, D. E. Filippidou, A. Almeida, A. Bilbao, H. Mehanna, S. Singer, S. Thomas, L. Lacerenza, A. Manfuso, C. Copelli, F. Mercalli, A. Frigessi, E. Martinelli, L. Licitra, E. IF Fossen, K. Taylor, P. Nankivell, M. De, A. Abou-Foul, E. Estevez-Priego, M. F. Cabrera-Umpierrez, I. Alonso, S. Copelli, A. Ness, M. Pring, K. Hurley, BD4QoL Consortium",
+            "description": "This article presents the clinical study protocol of a multicenter randomized trial focused on quality of life assessment using non-invasive intelligent tools during post-curative treatment follow-up for head and neck cancer. The study aims to evaluate the impact of these tools on patients' well-being and their potential role in improving treatment outcomes.",
+            "type": "article",
+            "date": "2023",
+            "publisher": "Frontiers in Oncology",
+            "url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2023.1048593/full",
+            "pre-print": "",
+            "id": "bd4qol2023"
+         },
+        {
+            "title":"Multi-Phase-Field models for biological systems: From cells to vessels.",
+            "authors":"M. Moreira-Soares",
+            "description":"The process of metastasis formation begins by the movement of a single cell when it emerges from the tumor colony. This cell crosses the basement membrane penetrating a blood vessel and enters in the bloodstream. Physics is more and more present in the research of cellular mechanics, particularly in the study of processes related with tumor growth. In this project we will use continuous media and soft matter physics to model tissue invasion by metastatic cell in a quantitative way.",
+            "type":"thesis",
+            "date":"2020",
+            "link":"https://eg.uc.pt/handle/10316/96232",
+            "id": "phdthesis"
+        },
+        {
+            "title":"Coupling blood flow and growing vasculature in three dimensions",
+            "authors":"M. Moreira-Soares",
+            "description":"We used continuum mechanics coupled with an agent-based approach to model angiogenesis - the growth of new blood vessels from a preexisting vasculature. The model was implemented in 3D and the code is available as open source.",
+            "type":"dissertation",
+            "date":"2015",
+            "link":"https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/trabalhoConclusao/viewTrabalhoConclusao.jsf?popup=true&id_trabalho=2365061",
+            "id": "mscdissertation"
+        },
+        {
+            "title":"Quantitative Analysis of Neuronal Mitochondrial Movement Reveals Patterns Resulting from Neurotoxicity of Rotenone and 6-Hydroxydopamine.",
+            "authors":"R. F. Simões, R. Pinho, M. Moreira-Soares, J. Kovarova, J. Neuzil, R. D. M. Travasso, P. J. Oliveira, T. Cunha-Oliveira, F. B. Pereira.",
+            "publisher":"FASEB Journal",
+            "date":"2021",
+            "pre-print":"https://doi.org/10.1101/2021.02.24.432715",
+            "url":"https://faseb.onlinelibrary.wiley.com/doi/10.1096/fj.202100899R",
+            "type":"article",
+            "id": "mito2021"
+        },
+        {
+            "title":"Adhesion modulates cell morphology and migration within dense fibrous networks. ",
+            "authors":"M. Moreira-Soares, S. P. Cunha,  J. R. Bordin, R. D. M. Travasso.",
+            "publisher":"J. Phys: Condens. Matter",
+            "date":"2020",
+            "pre-print":"https://doi.org/10.1101/838995",
+            "url":"https://iopscience.iop.org/article/10.1088/1361-648X/ab7c17",
+            "type":"article",
+            "id": "adhesion2020"
+        },
+        {
+            "title":"Angiogenic Factors produced by Hypoxic Cells are a leading driver of Anastomoses in Sprouting Angiogenesis – a computational study. ",
+            "authors":"M. Moreira-Soares, R. Coimbra, L. Rebelo, J. Carvalho, R.D. M Travasso.",
+            "publisher":"Scientific Reports",
+            "date":"2018",
+            "pre-print":"",
+            "url":"http://www.nature.com/articles/s41598-018-27034-8",
+            "type":"article",
+            "id":"angio2018"
+        }
+    ],
+    "experience":[
+        {
+            "title":"Researcher",
+            "keywords":["biostatistics", "machine learning", "clinical prediction models"],
+            "institution":{
+                "name_en":"OCBE, Faculty of Medicine, University of Oslo",
+                "name_native":"OCBE, Medisinsk Fakultet, Universitetet i Oslo",
+                "acronym":"UiO"
+            },
+            "location":{
+                "city":"Oslo",
+                "country":"Norway"
+            },
+            "start_date":"2023-10-01",
+            "end_date":"2024-09-30",
+            "type":"Full-time",
+            "deliverables": []
+        },
+        {
+            "title":"Postdoctoral research fellow",
+            "keywords":["biostatistics", "machine learning", "clinical prediction models"],
+            "institution":{
+                "name_en":"OCBE, Faculty of Medicine, University of Oslo",
+                "name_native":"OCBE, Medisinsk Fakultet, Universitetet i Oslo",
+                "acronym":"UiO"
+            },
+            "location":{
+                "city":"Oslo",
+                "country":"Norway"
+            },
+            "start_date":"2020-10-01",
+            "end_date":"2023-09-30",
+            "type":"Full-time",
+            "deliverables": [
+                "Managed HPC resources from sigma2 and sensitive data in two projects",
+                "Delivered descriptive statistics in a manuscript (to be submitted soon)",
+                "Developed prediction models for survival and quality of life",
+                "Built a NoSQL database using MongoDB",
+                "Deployed prediction models using python/flask REST API with SWAGGER, used by collaborators for a dashboard",
+                "Delivered to the EU commission an extensive report about the prediction models developed",
+                "Co-supervised two master students",
+                "Organised biweekly seminars"
+            ]
+            
+        },
+        {
+            "title":"Research assistant",
+            "keywords": ["biological systems", "mechanistic models", "computational physics"],
+            "institution":{
+                "name_en":"CFisUC, Department of Physics, University of Coimbra",
+                "name_native":"CFisUC, Departamento de Física, Universidade de Coimbra",
+                "acronym":"UC"
+            },
+            "location":{
+                "city":"Coimbra",
+                "country":"Portugal"
+            },
+            "start_date":"2015-09-01",
+            "end_date":"2020-07-01",
+            "type":"Full-time",
+            "deliverables": [
+                "Developed a code for simulating the growth of blood vessels used in one published paper (github.com/phydev/angio)",
+                "Developed a code for simulating cancer metastasis used in two published papers (github.com/phydev/spiccato)",
+                "Developed a python package for feature engineering used in one published paper and one pre-print (github.com/ocbe-uio/trajpy)",
+                "Supervised one master student intern"
+            ]
+        },
+        {
+            "title":"Research intern",
+            "keywords":["monte carlo, molecular dynamics, statistical physics"],
+            "institution":{
+                "name_en":"TSSC, Department of Physics, UFPel",
+                "name_native":"TSSC, Departamento de Física, UFPel",
+                "acronym":"UFPel"
+            },
+            "location":{
+                "city":"Pelotas",
+                "country":"Brazil"
+            },
+            "start_date":"2009-04-01",
+            "end_date":"2015-03-31",
+            "type":"Full-time",
+            "deliverables": [
+                "Developed scripts for molecular dynamics simulation",
+                "Developed monte carlo simulation for charged systems"
+            ]
+
+        }
+    ],
+    "awards":[
+        {
+            "title":"ITC Conference grant, CA C5214",
+            "funder":"EuroCellNet",
+            "date":"2018",
+            "location":{
+                "city":"Vienna",
+                "country":"Austria"
+            }
+        },
+        {
+            "title":"Short-term project grant at LadHyX - École Polytechnique",
+            "funder":"EuroCellNet",
+            "date":"2017",
+            "location":{
+                "city":"Paris",
+                "country":"France"
+            }
+        },
+        {
+            "title":"PhD project grant at the University of Coimbra",
+            "funder":"CNPq-Brazil",
+            "date":"2015",
+            "location":{
+                "city":"Coimbra",
+                "country":"Portugal"
+            }
+        },
+        {
+            "title":"MSc. stipend",
+            "funder":"FAPERGS/CAPES",
+            "date":"2013",
+            "location":{
+                "city":"Pelotas",
+                "country":"Brazil"
+            }
+        },
+        {
+            "title":"Undergratuate sandiwch scholarship at the University of Coimbra",
+            "funder":"CAPES-Brazil",
+            "date":"2010",
+            "location":{
+                "city":"Coimbra",
+                "country":"Portugal"
+            }
+        },
+        {
+            "title":"Scientific Initiation scholarship",
+            "funder":"FAPERGS",
+            "date":"2010",
+            "location":{
+                "city":"Pelotas",
+                "country":"Brazil"
+            }
+        },
+        {
+            "title":"Scientific Initiation scholarship",
+            "funder":"SiSU/MEC",
+            "date":"2009",
+            "location":{
+                "city":"Pelotas",
+                "country":"Brazil"
+            }
+        }
+    ],
+    "communications": [
+        {
+            "title": "A brief introduction to tidyverse",
+            "year": "2022",
+            "invited": "yes",
+            "venue": "Experimental Design PhD School ",
+            "city": "Coimbra",
+            "country": "Portugal"
+        },
+        {
+            "title": "Modeling Biological systems with phase-field models",
+            "year": "2019",
+            "invited": "yes",
+            "venue": "Café com física, Univ. of Coimbra",
+            "city": "Coimbra",
+            "country": "Portugal"
+        },
+        {
+            "title": "From cells to vessels: a versatile phase-field approach",
+            "year": "2018",
+            "invited": "yes",
+            "venue": "University of Manchester",
+            "city": "Manchester",
+            "country": "United Kingdom"
+        },
+        {
+            "title": "Modeling cell shape and migration with a phase-field model",
+            "year": "2018",
+            "invited": "no",
+            "venue": "Measuring and modelling cell migration",
+            "city": "Vienna",
+            "country": "Austria"
+        },
+        {
+            "title": "Modelling cell shape and migration: a phase-field approach",
+            "year": "2018",
+            "invited": "no",
+            "venue": "11th ECMTB (ESMTB)",
+            "city": "Lisbon",
+            "country": "Portugal"
+        },
+        {
+            "title": "Understanding cell shape and migration – a computational study",
+            "year": "2018",
+            "invited": "no",
+            "venue": "Física 2018",
+            "city": "Covilhã",
+            "country": "Portugal"
+        },
+        {
+            "title": "Tumor angiogenesis: a mathematical model in three dimensions",
+            "year": "2016",
+            "invited": "no",
+            "venue": "Physical Biology of Tissue Morphogenesis - Mechanics, Metabolism and Signaling",
+            "city": "Dresden",
+            "country": "Germany"
+        },
+        {
+            "title": "Angiogenic factors produced by hypoxic cells drive anastomosis in sprouting angiogenesis",
+            "year": "2016",
+            "invited": "yes",
+            "venue": "Mathematics of Complex Systems: from precision medicine to smart cities",
+            "city": "Coimbra",
+            "country": "Portugal"
+        },
+        {
+            "title": "Tumor angiogenesis: a mathematical model in three dimensions",
+            "year": "2016",
+            "invited": "no",
+            "venue": "Ciência",
+            "city": "Lisboa",
+            "country": "Portugal"
+        },
+        {
+            "title": "Tumour angiogenesis and vascular patterning: a mathematical model",
+            "year": "2014",
+            "invited": "no",
+            "venue": "XVI UFPel Meeting of Postgraduate",
+            "city": "Pelotas",
+            "country": "Brazil"
+        },
+        {
+            "title": "A mathematical model for pathological angiogenesis",
+            "year": "2013",
+            "invited": "no",
+            "venue": "XXXVI National Meeting on Condensed Matter Physics",
+            "city": "Águas de Lindóia",
+            "country": "Brazil"
+        },
+        {
+            "title": "Physical approach for vascular endothelial growth modelling",
+            "year": "2013",
+            "invited": "no",
+            "venue": "I South Meeting of Physics",
+            "city": "Curitiba",
+            "country": "Brazil"
+        }
+    ],
+    "languages":[
+        {
+            "language":"Portuguese",
+            "level":"Native"
+        },
+        {
+            "language":"English",
+            "level":"B2"
+        },
+        {
+            "language":"Norsk - Bokmål",
+            "level":"B1"
+        },
+        {
+            "language":"Spanish",
+            "level":"A2/B1"
+        },
+        {
+            "language":"French",
+            "level":"A2"
+        }
+    ],
+    "supervisions": [
+        {
+            "type": "master dissertation",
+            "advisee": "Eduardo Mossmann",
+            "status": "concluded",
+            "year": "2022"
+        },
+        {
+            "type": "master dissertation",
+            "advisee": "Ludovica Montani",
+            "year": "2022",
+            "status": "concluded"
+        },
+        {
+            "type": "internship",
+            "advisee": "Susana Cunha",
+            "status": "concluded",
+            "year": "2018"
+        }
+
+    ],
+    "meta": {
+        "important topics": [
+            "algorithms and data structures",
+            "python development",
+            "machine learning and AI development",
+            "relational and non-relational databases",
+            "cloud computing"
+        ]
+    },
+    "skills": [
+        "object-oriented programming", 
+        "Fortran", 
+        "python", 
+        "project management",
+        "data analysis", 
+        "data visualization", 
+        "machine learning", 
+        "writting", 
+        "communication"
+    ]
+    
+}
