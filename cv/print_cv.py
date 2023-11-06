@@ -81,14 +81,18 @@ class html:
                     )
 
     @staticmethod
-    def print_publications(f, publications):
+    def print_publications(f, publications, kind = 'article',  title = True):
+        if title:
+            f.write(h1("Publications") + n)
 
-        f.write(h1("Publications") + n)
         for entry in publications:
-            if entry["type"]=="article":
-                f.write(p(entry["authors"] + " ("+entry["date"]+") "
-                 + href(entry["url"], entry["title"]) + comma + entry["publisher"]) + n
+            if entry["type"]==kind:
+                f.write(p(href(entry["url"], entry["title"])  + " ("+entry["date"]+") "
+                   + comma + entry["authors"] + comma + entry["publisher"]) + n
                  )
+                #f.write(p(entry["authors"] + " ("+entry["date"]+") "
+                # + href(entry["url"], entry["title"]) + comma + entry["publisher"]) + n
+                # )
 
     @staticmethod
     def print_communications(f, communications):
@@ -151,7 +155,8 @@ if __name__ == "__main__":
 
         # print only publications
         output_file = open("cv/publications_list.html", "w")
-        html.print_publications(output_file, cv["publications"])
+        html.print_publications(output_file, cv["publications"], kind = 'article', title = False)
+        html.print_publications(output_file, cv["publications"], kind = 'thesis', title = False)
 
         output_file.close()
 

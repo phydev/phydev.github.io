@@ -163,7 +163,7 @@
             "title":"Coupling blood flow and growing vasculature in three dimensions",
             "authors":"M. Moreira-Soares",
             "description":"We used continuum mechanics coupled with an agent-based approach to model angiogenesis - the growth of new blood vessels from a preexisting vasculature. The model was implemented in 3D and the code is available as open source.",
-            "type":"dissertation",
+            "type":"thesis",
             "date":"2015",
             "link":"https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/trabalhoConclusao/viewTrabalhoConclusao.jsf?popup=true&id_trabalho=2365061",
             "id": "mscdissertation"
