@@ -128,7 +128,7 @@ class html:
 
     @staticmethod
     def print_foot(f):
-        f.write(p('<center> This CV was proudly generated with python + JSON + HTML. </center>'))
+        f.write(p('<center> This CV was proudly generated with python + JSON + JS + HTML. </center>'))
 
 if __name__ == "__main__":
 
@@ -147,7 +147,7 @@ if __name__ == "__main__":
         html.print_publications(output_file, cv["publications"])
         #html.print_communications(output_file, cv["communications"])
         html.print_languages(output_file, cv["languages"])
-        html.print_foot(output_file)
+        #html.print_foot(output_file)
         #html.print_footer(output_file)
         
         output_file.close()
