@@ -87,7 +87,7 @@ class html:
 
         for entry in publications:
             if entry["type"]==kind:
-                f.write(p(href(entry["url"], entry["title"])  + " ("+entry["date"]+") "
+                f.write(p(tab + href(entry["url"], entry["title"])  + " ("+entry["date"]+") "
                    + comma + entry["authors"] + comma + entry["publisher"]) + n
                  )
                 #f.write(p(entry["authors"] + " ("+entry["date"]+") "
@@ -141,7 +141,7 @@ if __name__ == "__main__":
         output_file = open("cv/cv.html", "w")
 
         #html.print_header(output_file, cv["personal"])
-        html.print_personal(output_file, cv["personal"])
+        #html.print_personal(output_file, cv["personal"])
         html.print_experience(output_file, cv["experience"])
         html.print_education(output_file, cv["education"])
         html.print_publications(output_file, cv["publications"])
