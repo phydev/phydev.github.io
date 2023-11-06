@@ -123,7 +123,7 @@
             "type": "article",
             "date": "2023",
             "publisher": "Communications Biology",
-            "url": "",
+            "url": "#",
             "pre-print": "",
             "id": "gastric2023"
             
@@ -155,8 +155,9 @@
             "authors":"M. Moreira-Soares",
             "description":"The process of metastasis formation begins by the movement of a single cell when it emerges from the tumor colony. This cell crosses the basement membrane penetrating a blood vessel and enters in the bloodstream. Physics is more and more present in the research of cellular mechanics, particularly in the study of processes related with tumor growth. In this project we will use continuous media and soft matter physics to model tissue invasion by metastatic cell in a quantitative way.",
             "type":"thesis",
+            "publisher": "University of Coimbra",
             "date":"2020",
-            "link":"https://eg.uc.pt/handle/10316/96232",
+            "url":"https://eg.uc.pt/handle/10316/96232",
             "id": "phdthesis"
         },
         {
@@ -164,8 +165,9 @@
             "authors":"M. Moreira-Soares",
             "description":"We used continuum mechanics coupled with an agent-based approach to model angiogenesis - the growth of new blood vessels from a preexisting vasculature. The model was implemented in 3D and the code is available as open source.",
             "type":"thesis",
+            "publisher": "Universidade Federal de Pelotas",
             "date":"2015",
-            "link":"https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/trabalhoConclusao/viewTrabalhoConclusao.jsf?popup=true&id_trabalho=2365061",
+            "url":"https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/trabalhoConclusao/viewTrabalhoConclusao.jsf?popup=true&id_trabalho=2365061",
             "id": "mscdissertation"
         },
         {
