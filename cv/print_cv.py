@@ -13,7 +13,7 @@ h2 = lambda x: "<h2>"+x+"</h2>" # second header
 h3 = lambda x: "<h3>"+x+"</h3>"
 bf = lambda x: "<b>"+x+"</b>" # bold
 it = lambda x:"<i>"+x+"</i>" # italic
-href = lambda link, text:"<a href='"+link+"'>" + text + "</a>"
+href = lambda link, text:"<a href='"+link+"' target='_blank' rel='noopener noreferrer'>" + text + "</a>"
 invited = {"yes": "(Invited), ", "no": ""}
 # formatting
 n = "\n"
