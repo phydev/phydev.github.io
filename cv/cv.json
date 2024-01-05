@@ -116,6 +116,17 @@
         }
     },
     "publications":[
+	{
+	"title": "Establishing a database of head and neck cancer survivors to study quality of life: the Big Data for Quality of Life historical cohort description",
+	"authors": "M. Moreira-Soares; E. I. F. Fossen; K. Taylor; S. Singer; K. Hurley; S. Thomas; M. Pring; A. Ness; S. Cavalieri; C. Vener; L. López Pérez; M. F. Cabrera-Umpierrez; G. Fico; A. Frigessi; L. Licitra; M. LeBlanc",
+	"description": "The Big Data for Quality of Life (BD4QoL) study investigates quality of life (QoL) in head and neck cancer (HNC) survivors, focusing on survivorship and characterizing survivor demographics.",
+	"type":"article",
+	"date":"2024",
+	"publisher": "Submitted",
+	"url": "#",
+	"pre-print": "",
+	"id": "bd4qol2024"
+	},
         {
             "title": "The ECM and tissue architecture are major determinants of early invasion mediated by E-cadherin dysfunction",
             "authors": "S. Melo , P. Guerrero , M. Moreira Soares , J. R. Bordin , F. Carneiro , P. Carneiro , M. Beatriz Dias , J. Carvalho , J. Figueiredo , R. Seruca",
