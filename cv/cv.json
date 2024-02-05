@@ -117,14 +117,14 @@
     },
     "publications":[
 	{
-	"title": "Establishing a database of head and neck cancer survivors to study quality of life: the Big Data for Quality of Life historical cohort description",
+	"title": "Quality of life in head and neck cancer survivors: the Big Data for Quality of Life study",
 	"authors": "M. Moreira-Soares; E. I. F. Fossen; K. Taylor; S. Singer; K. Hurley; S. Thomas; M. Pring; A. Ness; S. Cavalieri; C. Vener; L. López Pérez; M. F. Cabrera-Umpierrez; G. Fico; A. Frigessi; L. Licitra; M. LeBlanc",
 	"description": "The Big Data for Quality of Life (BD4QoL) study investigates quality of life (QoL) in head and neck cancer (HNC) survivors, focusing on survivorship and characterizing survivor demographics.",
 	"type":"article",
 	"date":"2024",
-	"publisher": "Submitted",
-	"url": "#",
-	"pre-print": "",
+	"publisher": "medRxiv",
+	"url": "https://doi.org/10.1101/2024.02.02.24302118",
+	"pre-print": "https://doi.org/10.1101/2024.02.02.24302118",
 	"id": "bd4qol2024"
 	},
         {
