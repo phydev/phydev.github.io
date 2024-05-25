@@ -20,15 +20,14 @@ def generateIndex(folder, output, extensions = ['html']):
         metadata[n]['link'] = link
         
         if metadata[n]['status'] == 'show':
-            patterns[metadata[n]["order"]] = "<p><a href='"+metadata[n]['link']+"'> "+ str(metadata[n]["order"])+ " - " + metadata[n]["title"]+" </a></p>"
+            print(metadata[n])
+            patterns[metadata[n]["order"]] = "<p><a href='"+metadata[n]['link']+"'> " + metadata[n]["title"]+" </a></p>"
             article_number +=1
 
     with open(output, "w") as file:
         for line in range(0, article_number):
+            print(patterns[str(line)])
             file.write(patterns[str(line)])
 
-
-generateIndex(folder="posts", output="posts.html")
 generateIndex(folder="resources/biocomp", output="./resources/contents.html")
-
-
+generateIndex(folder="posts", output="posts.html")
