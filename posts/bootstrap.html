@@ -55,7 +55,7 @@ We will briefly present different internal validation methods and focus on boots
 
 <h2>\(k\)-fold Cross-validation</h2>
 
-<p>Cross-validation is more robust than split-sample. The data is divided into \(k\)  folds, where \(k-1\)  folds are used for training and the remaining fold is used for testing. The process is repeated \(k\)  times, each time a different fold is used for testing. The final performance is the average of the \(k\)  performances. The 5- and 10-fold cross-validation are the monst common settings, but other values of \(k\)  can be used. For instance, the leave-out-one cross-validation (LOOCV) is often applied to very small data settings \((N \lt 100)\), where \(k=N\) and only 1 value is used for validation at time. Cross-validation is computationally expensive, but it is a good compromise between split-sample and bootstrap. </p>
+<p>Cross-validation is more robust than split-sample. The data is divided into \(k\)  folds, where \(k-1\)  folds are used for training and the remaining fold is used for testing. The process is repeated \(k\)  times, each time a different fold is used for testing. The final performance is the average of the \(k\)  performances. The 5- and 10-fold cross-validation are the most common settings, but other values of \(k\)  can be used. For instance, the leave-out-one cross-validation (LOOCV) is often applied to very small data \((N \lt 100)\), where \(k=N\) and only 1 value is used for validation at time. Cross-validation can be computationally expensive depending on the number of folds, but it is a good compromise between split-sample and bootstrap. </p>
 
 
 <img src="/posts/figs/cv_scheme.png" alt="5-fold cross-validation scheme." style="width: 50%; height: auto; align-self: center;">
