@@ -36,13 +36,13 @@ $(function(){
   <main id="main">
 <h1>Internal validation with bootstrap .632+ estimator</h1>
 
-<h2> What is this article about? </h2>
+<h2> Introduction </h2>
+
+<p>Internal validation is an important step in model development. The aim of internal validation is to estimate model performance on unseen data drawn from the same population where the model was developed. On the other hand, external validation is performed by an independent<a class="footnote">&sup1<span>Internal-external validation is when the same group that developed the model uses independet data for model validation. </span></a> group of researchers using independent data. It is important to note that internal validation often gives better performance than the observed on new data, considering that population shift is a common issue. </p>
 
 We will briefly present different internal validation methods and focus on bootstrap .632+ estimator. Bootstrap is a powerful statistical method not only in the context of prediction models, but also in hypothesis testing, confidence interval estimation, and many other applications. The main idea behind bootstrap is that you resample from the original data to estimate the distribution of an estimate. In the context of internal validation it allows to estimate the least biased performance of a given model when compared to split-sample and cross-validation.
 
-<h2>What is internal validation?</h2>
-
-<p>Internal validation is an important step in model development. The aim of internal validation is to estimate model performance on unseen data drawn from the same population where the model was developed. On the other hand, external validation is performed by an independent<a class="footnote">&sup1<span>Internal-external validation is when the same group that developed the model uses independet data for model validation. </span></a> group of researchers using independent data. It is important to note that internal validation often gives better performance than the observed on new data, considering that population shift is a common issue. </p>
+At the end of this post we will provide a simple example using the bootstrap .632+ estimator to evaluate a logistic regression model for breast cancer prediction.
 
 <h2>Split-sample </h2>
 
