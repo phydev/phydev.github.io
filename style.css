@@ -85,9 +85,7 @@ a {
 }
 
 main p {
-    text-align: justify;
-    
-    
+    text-align: justify;    
 }
 
 h1 {
@@ -98,7 +96,7 @@ h1 {
 h2 {
     text-align: left;
     color: black;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 content {
@@ -210,7 +208,7 @@ bottom {
 border:none;}
 
 .button {
-    background-color: #000000;
+  background-color: #000000;
   display: block;
   position: absolute;
   left: 50%;
