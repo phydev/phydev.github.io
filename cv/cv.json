@@ -145,8 +145,8 @@
             "description": "This submission presents TrajPy, an open-source Python package that empowers feature engineering for trajectory analysis across different domains. TrajPy provides users with a set of optimized algorithms and metrics for trajectory clustering, classification, and visualization, allowing the identification of patterns and trends that are often overlooked by traditional methods. The package is user-friendly and flexible, allowing customization and integration with other Python libraries. TrajPy is expected to become a valuable tool for research in multiple fields, including biology, computer science, and social sciences.",
             "type": "article",
             "date": "2023",
-            "publisher": "arxiv",
-            "url": "https://arxiv.org/pdf/2308.11309v1.pdf",
+            "publisher": "Bioinformatics Advances",
+            "url": "https://doi.org/10.1093/bioadv/vbae026",
             "pre-print": "https://arxiv.org/abs/2308.11309",
             "id": "trajpy2023"
          },
