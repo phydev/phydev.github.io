@@ -116,6 +116,18 @@
         }
     },
     "publications":[
+    {
+        "title": "Joint probability approach for prognostic prediction of conditional outcomes: application to quality of life in head and neck cancer survivors",
+        "authors": "M. Moreira-Soares; E. I. F. Fossen; ..., M. LeBlanc.",
+        "description": "Probabilitistic framework for predicting conditional outcomes",
+        "type": "article",
+        "date": "2024",
+        "url": "#",
+        "publisher": "",
+        "pre-print": "#",
+        "id": "bd4predict"
+
+    },    
 	{
 	"title": "Quality of life in head and neck cancer survivors: the Big Data for Quality of Life study",
 	"authors": "M. Moreira-Soares; E. I. F. Fossen; K. Taylor; S. Singer; K. Hurley; S. Thomas; M. Pring; A. Ness; S. Cavalieri; C. Vener; L. López Pérez; M. F. Cabrera-Umpierrez; G. Fico; A. Frigessi; L. Licitra; M. LeBlanc",
@@ -214,11 +226,28 @@
     ],
     "experience":[
         {
+            "title":"Data scientist",
+            "keywords":["machine learning", "fraud detection", "tax administration"],
+            "institution":{
+                "name_en":"The Norwegian Tax Administration",
+                "name_native":"Skatteetaten",
+                "acronym":"Skateetaten"
+            },
+            "location":{
+                "city":"Oslo",
+                "country":"Norway"
+            },
+            "start_date":"2024-08-01",
+            "end_date":"",
+            "type":"Full-time",
+            "deliverables": []
+        },
+        {
             "title":"Researcher",
             "keywords":["biostatistics", "machine learning", "clinical prediction models"],
             "institution":{
                 "name_en":"OCBE, Faculty of Medicine, University of Oslo",
-                "name_native":"OCBE, Medisinsk Fakultet, Universitetet i Oslo",
+                "name_native":"OCBE, Det Medisinsk Fakultet, Universitetet i Oslo",
                 "acronym":"UiO"
             },
             "location":{
@@ -226,7 +255,7 @@
                 "country":"Norway"
             },
             "start_date":"2023-10-01",
-            "end_date":"2024-09-30",
+            "end_date":"2024-07-31",
             "type":"Full-time",
             "deliverables": []
         },
