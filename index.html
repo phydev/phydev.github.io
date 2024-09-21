@@ -61,68 +61,15 @@ $(function(){
 });
 </script>
 
-<h2>// Conferences</h2>
-  <div id="upcoming-conferences">
-    <h2> >> Upcoming</h2>
-    <ul id="upcoming-list"></ul>
-  </div>
-  <div id="past-conferences">
-    <h2> >> Past</h2>
-    <ul id="past-list"></ul>
-  </div>
-   </main>
+
+
+   </main> 
+
+   
 <div id="bottom-placeholder">
 
 </div>
 
-<script>
-    // Function to format date as "1st June 2023"
-    function formatDate(dateStr) {
-      const date = new Date(dateStr);
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      const formattedDate = date.toLocaleDateString('en-US', options);
-      return formattedDate.replace(/\d+(?=\s\w+$)/, match => {
-        return match + (match == 1 ? 'st' : (match == 2 ? 'nd' : (match == 3 ? 'rd' : 'th')));
-      });
-    }
-
-
-  // Fetch the JSON data
-  fetch('meetings.json')
-    .then(response => response.json())
-    .then(data => {
-      const upcomingList = document.getElementById('upcoming-list');
-      const pastList = document.getElementById('past-list');
-
-      // Get the current date
-      const currentDate = new Date();
-
-      // Sort events by end date (latest to oldest)
-      const sortedEvents = data.Events.sort((a, b) => new Date(b.end_date) - new Date(a.end_date));
-
-      // Populate the lists with conference data
-      sortedEvents.forEach(event => {
-        const li = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = event.link;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        // link.textContent = `${event.title} (${event.start_date} - ${event.end_date})`;
-        link.textContent = `${event.title} - ${formatDate(event.start_date)}`;
-
-        if (new Date(event.end_date) < currentDate) {
-          pastList.appendChild(li);
-        } else {
-          upcomingList.appendChild(li);
-        }
-        
-        li.appendChild(link);
-      });
-    })
-    .catch(error => {
-      console.error('Error fetching JSON:', error);
-    });
-</script>
 
 <script>
 $(function(){
