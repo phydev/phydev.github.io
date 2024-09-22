@@ -184,7 +184,7 @@ img {
 
 .sideby {
      margin-left:0%;
-    float:left;
+    float:right;
 }
 
 
@@ -388,3 +388,64 @@ a.footnote:hover span {
   transition: all 2s ease;
 }
 
+.figure-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+.figure {
+  text-align: center;
+  margin: 10px;
+}
+.figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+.caption {
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.content-container {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: space-between; /* Space between the text and image */
+}
+
+/* Assuming .content-container is the parent container */
+.content-container {
+  display: flex;
+  flex-direction: row; /* Default direction */
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Responsive adjustment */
+@media (max-width: 1279px) { /* Adjust 600px to your preference */
+  .content-container {
+      flex-direction: column;
+  }
+  .text-container, .image-container {
+      width: 100%; /* Makes both text and image take full width */
+  }
+  .image-container {
+      order: 1; /* Optional: Ensures image is below text */
+  }
+  .text-container {
+      order: 0; /* Optional: Ensures text is above image */
+  }
+}
+
+
+.text-container {
+  flex: 1; /* Allows the text container to grow and fill the space */
+  padding-right: 20px; /* Adds some space between the text and the image */
+}
+
+.image-container img {
+  width: 100%; /* 50% of the viewport width */
+  height: auto;
+}

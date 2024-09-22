@@ -57,7 +57,8 @@ class html:
         
         for entry in experience:
             start_date = datetime.strptime(entry["start_date"], "%Y-%m-%d")
-            end_date = datetime.strptime(entry["end_date"], "%Y-%m-%d")
+            if entry['end_date'] != "":
+                end_date = datetime.strptime(entry["end_date"], "%Y-%m-%d")
             f.write(p(str(start_date.year)+" - " +str(end_date.year) + 
                     tab+entry["title"])+n)
             f.write(p(4*tab+entry["institution"]["name_en"]))

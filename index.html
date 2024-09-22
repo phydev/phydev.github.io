@@ -15,67 +15,80 @@
 <!--<iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>-->
 <!-- <a rel="me" href="https://mastodon.social/@phydev"> -->
 <!--Navigation bar-->
-<div id="nav-placeholder">
+    <div id="nav-placeholder">
 
-</div>
+    </div>
 
-<script>
-$(function(){
-  $("#nav-placeholder").load("/header.html");
-});
-</script>
+    <script>
+    $(function(){
+    $("#nav-placeholder").load("/header.html");
+    });
+    </script>
 <!--end of Navigation bar-->
 
 
-   <main id="main">
-<!--        <h1>Theory</h1>-->
+    <main id="main">
+        <h2>// About me</h2>
 
-<p>I currently work as a Data Scientist at the Norwegian Tax Administration (Skatteetaten), where I support the agency's data-driven vision by developing machine learning solutions for various applications.</p> 
+        
+        <div class="content-container">
+            <div class="text-container">
+                <p>
+                    <p>I currently work as a Data Scientist at the Norwegian Tax Administration (Skatteetaten), where I support the agency's data-driven vision by developing machine learning solutions for various applications.</p> 
 
-<p>Previously, I worked as a postdoc and researcher in Biostatistics at the University of Oslo (Norway). I developed clinical prognostic models to predict quality of life and survival in head and neck cancer patients. During this time, I also enhanced my <a href="https://doi.org/10.1093/bioadv/vbae026">data engineering</a> skills by harmonizing and integrating datasets from different sources, using web scraping to acquire data, and developing REST APIs and dashboards for model deployment.</p> 
+                    <p>Previously, I worked as a postdoc and researcher in Biostatistics at the University of Oslo (Norway). I developed clinical prognostic models to predict quality of life and survival in head and neck cancer patients. During this time, I also enhanced my <a href="https://doi.org/10.1093/bioadv/vbae026">data engineering</a> skills by harmonizing and integrating datasets from different sources, using web scraping to acquire data, and developing REST APIs and dashboards for model deployment.</p> 
 
-<p>My education in Computational Physics provided me with strong analytical and mathematical skills, along with extensive experience in computational science. As a research assistant at the University of Coimbra (Portugal), I developed complex mechanistic models to simulate biological systems such as <a href="https://www.nature.com/articles/s41598-018-27034-8" target="_blank">blood vessel growth</a>, <a href="https://iopscience.iop.org/article/10.1088/1361-648X/ab7c17/meta">cell migration</a>, and <a href="https://doi.org/10.1038/s42003-023-05482-x">cancer metastasis</a>.</p>
-      
-      <p> Explore my website to learn more about my projects, publications, and the innovative work I continue to pursue at the intersection of data science and applied research.
-</p>
-       
-     <p>
-</p>
-<!--      <h2>Allen-Cahn Equation</h2>-->
+                    <p>My education in Computational Physics provided me with strong analytical and mathematical skills, along with extensive experience in computational science. As a research assistant at the University of Coimbra (Portugal), I developed complex mechanistic models to simulate biological systems such as <a href="https://www.nature.com/articles/s41598-018-27034-8" target="_blank">blood vessel growth</a>, <a href="https://iopscience.iop.org/article/10.1088/1361-648X/ab7c17/meta">cell migration</a>, and <a href="https://doi.org/10.1038/s42003-023-05482-x">cancer metastasis</a>.</p>
+        
+                    <p> Explore my website to learn more about my projects, publications, and the innovative work I continue to pursue at the intersection of data science and applied research.</p>
+        
 
+                    
 
-<img src="images/angio.png" alt="Four time steps of growing vessels starting from only one vessel." class="center">
-       <img src="images/vegf.png" alt="Four time steps of the growth factor field."  class="center">
-    <leg>  In this figure we show the evolution (from left to right) of the vascular morphology (top row)
-    and of the corresponding VEGF concentration (bottom row) produced by randomly distributed hypoxic cells for a network growing.
-        The value of the VEGF concentration at the hypoxic cells is maintained at Ts (in light green)
-        and reaches zero (in blue) inside the irrigated regions.</leg>
+            </div>
 
+            <div class="image-container">
+            
+                <img src="../images/mauricio_peru.jpg" alt="Maurício in some ruins in Peru.">
+    
+                <p style="font-style: italic; text-align: center;">  <a href="https://goo.gl/maps/KqVcWdcUGUs">  Ollantaytambo Sanctuary, Peru</a></p> 
 
-<h2> // Posts </h2>
-       <div id="articles-placeholder">
+            </div>
 
-</div>
-<script>
-$(function(){
-  $("#articles-placeholder").load("posts.html");
-});
-</script>
+        </div>
+
+        <!-- <img src="images/angio.png" alt="Four time steps of growing vessels starting from only one vessel." class="center">
+            <img src="images/vegf.png" alt="Four time steps of the growth factor field."  class="center">
+            <leg>  In this figure we show the evolution (from left to right) of the vascular morphology (top row)
+            and of the corresponding VEGF concentration (bottom row) produced by randomly distributed hypoxic cells for a network growing.
+                The value of the VEGF concentration at the hypoxic cells is maintained at Ts (in light green)
+                and reaches zero (in blue) inside the irrigated regions.</leg> -->
 
 
+        <h2> // Posts </h2>
+            <div id="articles-placeholder">
+            </div>
 
-   </main> 
+            <script>
+            $(function(){
+            $("#articles-placeholder").load("posts.html");
+            });
+            </script>
+
+
+
+    </main> 
 
    
-<div id="bottom-placeholder">
+    <div id="bottom-placeholder">
 
-</div>
+    </div>
 
 
-<script>
-$(function(){
-  $("#bottom-placeholder").load("/bottom.html");
-});
-</script>
+    <script>
+    $(function(){
+    $("#bottom-placeholder").load("/bottom.html");
+    });
+    </script>
 </body>
 </html>
