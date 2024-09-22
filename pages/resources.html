@@ -39,17 +39,27 @@ $(function(){
  
     <h1> // Resources</h1>
     
-    <p>Educational resources for students interested in Computational Biology, Biostatistics and Bioinformatics.</p>
+    <p>Educational resources for students interested in Computational Sciences.</p>
+    
+    <div id="articles-placeholder">
+    </div>
+    <p><a href="/resources/biocomp.html">Introduction to Computational Biology with python in Portuguese</a></p>
 
-    <h2>Portuguese</h2>
-    <p><a href="/resources/biocomp.html">Introdução à Biologia Computacional com Python</a></p>
+    <h2>Presentations</h2>
+       <p><a href="/resources/presentations/BEB_PhD_School2022.pdf" target=”_blank”>  A brief introduction to R with tidyverse </a></p>
+      <p><a href="/resources/presentations/ai_driven_tools.pdf" target=”_blank”>  AI-Driven tools: applications in research, pitfalls and perspectives </a></p>
+     <p><a href="/resources/presentations/grammar_of_graphs.pdf" target=”_blank”> The grammar of graphs: best practices on data visualization with examples </a></p>
+     
+     <p></p>
 
-    <h2>English</h2>
-       <p><a href="/resources/presentations/BEB_PhD_School2022.pdf" target=”_blank”> [Slides] A brief introduction to R with tidyverse </a></p>
-      <p><a href="/resources/presentations/ai_driven_tools.pdf" target=”_blank”> [Slides] AI-Driven tools: applications in research, pitfalls and perspectives </a></p>
-     <p><a href="/resources/presentations/grammar_of_graphs.pdf" target=”_blank”> [Slides] The grammar of graphs: best practices on data visualization with examples </a></p>
-       <p></p>
 
+       
+
+       <script>
+       $(function(){
+       $("#articles-placeholder").load("../posts.html");
+       });
+       </script>
 
 
 
