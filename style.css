@@ -445,7 +445,19 @@ a.footnote:hover span {
   padding-right: 20px; /* Adds some space between the text and the image */
 }
 
+
 .image-container img {
   width: 100%; /* 50% of the viewport width */
   height: auto;
 }
+
+a {
+  text-decoration: underline;
+}
+.nav-link {
+  text-decoration: none;
+}
+.navbar-brand{
+  text-decoration: none;
+}
+
