@@ -1,0 +1,122 @@
+<!--{"title": "Running DeepSeek locally with ollama", "date": "30.01.2025", "title_en": "Running DeepSeek locally with ollama", "status": "show", "order": "2"} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="themes/prism.css" rel="stylesheet" />
+      <script>
+  MathJax = {
+    tex: {
+      tags: 'all'  // should be 'ams', 'none', or 'all'
+    }
+  };
+  </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/scripts.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <title>Maurício Moreira-Soares</title>
+</head>
+<body>
+<!--<iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>-->
+
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("/header.html");
+});
+</script>
+
+<script src="prism.js"></script>
+
+  <main id="main">
+<h1>Running DeepSeek locally with ollama</h1>
+      <p>This tutorial is suitable for OSX without sudo admin rights.</p>
+
+<h2> Requirements </h2>
+
+      <ul>
+          <li>homebrew</li>
+          <li>python 3.11</li>
+          <li>ollama</li>
+          <li>open-webui 0.5.7 (optional)</li>
+
+      </ul>
+
+     <p>I recommend to use a virtual environment with poetry, but I will not cover this in this tutorial. </p>
+
+      <p>Python 3.11 is required by open-webui, it will not work on any other version. If you don't care about web interfaces you can just skip these steps</p>
+
+      <h2> Installation </h2>
+
+     <p>We start by installing python 3.11 and ollama via homebrew:</p>
+
+    <pre><code class="language-bash">
+        brew install python@3.11
+        brew install ollama
+    </code></pre>
+
+      <p>Switch to python 3.11</p>
+
+      <pre><code class="bash">
+        brew switch python 3.11
+      </code></pre>
+
+      <h2>Downloading and running DeepSeek</h2>
+      <p>Now you can download the model you wish with ollama.
+          If you have the same setup as mine (Macbook Pro M3 PRO, 36GB RAM), I recommend you distilled models up to 14B parameters.
+          I tested the 32B and the response time was in the order of minutes for a simple prompt. </p>
+
+      <pre>
+          <code class="bash">
+              ollama pull deepseek-r1:14b
+          </code>
+      </pre>
+
+      <p>It will take a couple of minutes to download the model (~9GB), but when it is done you will ready to use it with the following command:</p>
+      <pre>
+          <code class="bash">
+              ollama serve
+          </code>
+      </pre>
+
+      <p>Open another terminal, the previous one will be busy with the ollama server. To interact run the line bellow:</p>
+      <pre>
+          <code class="bash">
+              ollama run deepseek-r1:14b
+          </code>
+      </pre>
+
+      <p>Now you are ready to go! Just send in a prompt direct on the terminal. The model will show its reasoning process between the "think" tags. For closing ollama send /bye as a prompt. </p>
+
+      <h3>Getting a web interface to interact with the model (Optional)</h3>
+
+        If you wish to use a web interface very similar to OpenAI's, you can use open-webui.
+    <img src="/posts/figs/webui.png" alt="Web interface" style="width: 70%; height: auto; align-self: center;">
+
+      First install the open-webui package:
+      <pre>
+          <code class="bash">python3.11 -m pip install open-webui</code>
+      </pre>
+
+    Start the server
+      <pred>
+          <code class="bash">open-webui serve</code>
+      </pred>
+
+    <p>Wait until the server starts up. Access the web interface in the address https://127.0.0.1:8080/.</p>
+      <p>It will ask you to register a username and password, this data will be hosted locally as well - this is your server. </p>
+
+      <p>All set! Enjoy!</p>
+
+
+
+</main>
