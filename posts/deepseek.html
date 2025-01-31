@@ -41,11 +41,14 @@ $(function(){
 <h1>Running DeepSeek locally with ollama</h1>
 
       <h2>Introduction</h2>
-      <p>The goal of this tutorial is to set up a local server for running large language models (LLMs) in a local machine.
-          <p>We used DeepSeek model as example, but you can download any other model from <a href="https://ollama.com" target="_blank">ollama's catalogue</a>.</p>
+      <p>The aim of this tutorial is to guide you in deploying a local server for hosting large language models (LLMs) on your local machine.</p>
+      <p> As you will see, this requires just a couple of commands with ollama and open-webui. </p>
+      <p>We used DeepSeek model as example, but you can download any other model from <a href="https://ollama.com" target="_blank">ollama's catalogue</a>.</p>
 
 <h2> Requirements </h2>
-This tutorial is suitable for Mac OSX without sudo admin rights.
+<p>This tutorial is suitable for Mac OSX without sudo admin rights. Depending on the model you chose it will be required strong computational power. </p>
+
+      <>
       <ul>
           <li>homebrew</li>
           <li>python 3.11</li>
@@ -54,7 +57,7 @@ This tutorial is suitable for Mac OSX without sudo admin rights.
 
       </ul>
 
-     <p>I recommend to use a virtual environment with poetry, but I will not cover this in this tutorial. </p>
+     <p>I recommend the use of virtual environments, but this will not be covered in this tutorial. </p>
 
       <p>Python 3.11 is required by open-webui, it will not work on any other version. If you don't care about web interfaces you can just skip these steps</p>
 
