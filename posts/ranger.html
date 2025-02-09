@@ -101,16 +101,17 @@
                                      Chained Equations in R. Journal of Statistical, (2011).
                                                                                                   https://www.jstatsoft.org/article/view/v045i03</span></a>
        implemented
-       in the R package "MICE" and the machine learning based method <i>fast imputation with random forest</i>
+       in the R package "MICE" and the machine learning based method <i>fast imputation with Random Forest</i>
        "miceRanger" package.</p>
     
     <p>Both methods featured here use multiple imputation, but they differ significantly in two aspects. First, MICE
-       uses a linear regression model to impute missing values, while miceRanger uses a random forest model. Second,
+       uses a linear regression model to impute missing values, while miceRanger uses a Random Forest (RF) model.
+       Second,
        MICE uses Gibbs sampler with Markov Chain Monte Carlo (MCMC) for sampling the joint distribution, while
        miceRanger uses empirical cumulative distribution function (ECDF) for sampling. The latter is the more robust
        approach as it attempts to model the whole joint distribution of the data.</p>
     
-    <p>The first aspect means that because of the nature of random forest, miceRanger allows the introduction of
+    <p>The first aspect means that because of the nature of RF, miceRanger allows the introduction of
        non-linearities and agnostic interactions during the imputation process. This comes with the price of a larger
        sample size requirement for reducing overfitting and more hyperparameters to be tuned for the
        imputation. </p>
@@ -165,13 +166,13 @@
         
       
    
-    <p></p>
+    <p>
     
-    
-    <table>
-        <caption>Table 1: Datasets with different missing rates and \(R^2\) values. In total we have 9 conditions with
-                 100 replicates each.
-        </caption>
+          Table 1: Datasets with different missing rates and \(R^2\) values. In total we have 9 conditions
+                    with 100 replicates each.
+               <a href="javascript:void(0);" onclick="showHide('table1')">Show Table 1</a></p>
+    <table id="table1"  style="display:none;">
+ 
         <tr>
             <th>Dataset ID</th>
             <th>Missing rate</th>
@@ -232,8 +233,20 @@
     For MICE, we see that the confidence intervals always cover the true value of \(R^2\) and the mean estimate is
         close to the true value independent of the strength of the correlation between the response and covariates,
        and the amount of missingness in the data. The confidence intervals are bigger for higher amount of
-       missingness due to increased uncertainty.
+       missingness due to increased uncertainty, as expected.
     </p>
+    
+    <p> On the other hand, we can see that performances obtained with miceRanger are always overestimated, which
+    indicates that the imputation method is introducing a stronger correlation than the true relationship in the
+    data. This problem becomes exacerbated for high amount of missingness (50 and 75%) where the true
+    value is not covered by the confidente interval.
+    </p>
+    
+    
+    
+
+    
+    
     <div class="figure-container">
         <img src="/posts/figs/mice_results.png" alt="Results with mice" class="center" style="width:40%">
     <img src="/posts/figs/ranger_results.png" alt="Results with miceRanger." class="center" style="width:40%">
@@ -243,27 +256,14 @@
               lines.
         </caption>
     <p></p>
-    <p> On the other hand, we can see that performances obtained with miceRanger are always overestimated, which
-        indicates that the imputation method is introducing a stronger correlation than the true relationship in the
-        data. This problem becomes exacerbated for high amount of missingness (50 and 75%) where the true
-        value is not covered by the confidente interval.</p>
-    
+
     
     <p>To investigate this problem further we run another simulation where there is no correlation between the response
-       variable and the covariate. We trained random forest and linear regression models. Fig. 3 shows the predicted
+       variable and the covariate. We trained Random Forest and linear regression models. Fig. 3 shows the predicted
        points along with the original data for both methods. We see that Random Forest overfitted to the training data
         and predicts values close to the original data, even though there is no correlation in the original data. The
-       \(\hat{R^2}\) are \(0.80\) and \(0.00016\) for RF and LR, respectively.</p>
+       \(\hat{R^2}\) are \(0.80\) and \(0.16 \times 10^{-3}\) for RF and LR, respectively.
     </p>
-    <img src="/posts/figs/overfitting.png"
-                         alt="Shows two figures with predictions from random forest and linear regression on a dataset with no correlation."
-                         class="center"
-                         style="width:40%">
-        <caption> Figure 3: The true data is depicted in red and the predictions in blue for random forest (left) and
-                  linear regression (right).
-        </caption>
-
-     <p></p>
     
     <p>Fig. 4 shows how estimated parameters are affected when data is imputed using MICE (left) and miceRanger (right)
        with data generated under intermediate correlation, R² = 0.50. For MICE, we see that the confidence interval
@@ -271,6 +271,17 @@
        estimates from miceRanger exhibit a huge effect overestimation and small confidence intervals that do not cover
        the true value, indicating that the imputation method introduces a stronger correlation.
     </p>
+    <img src="/posts/figs/overfitting.png"
+                         alt="Shows two figures with predictions from Random Forest and linear regression on a dataset with no correlation."
+                         class="center"
+                         style="width:40%">
+        <caption> Figure 3: The true data is depicted in red and the predictions in blue for Random Forest (left) and
+                  linear regression (right).
+        </caption>
+
+     <p></p>
+    
+
     
     
     <div class="figure-container">
@@ -282,16 +293,17 @@
             <img src="/posts/figs/ranger_beta1_r2_05.png" alt="Figure 2">
   
         </figure>
-        
     </div>
-     <figcaption>Figure 4: Estimated parameter values obtained using MICE (left) and miceRanger (right) for data with
+    
+     <p>Figure 4: Estimated parameter values obtained using MICE (left) and miceRanger (right) for data with
                   intermediate correlation \(R² = 0.50\). Dashed lines represent the true
-                 value and CI estimated without missing values.</figcaption>
+                 value and CI estimated without missing values.</p>
+
     
     
     <h2>Conclusion</h2>
     
-    <p>We argue that Random forest based methods have the potential to overfit to previously seen data which is
+    <p>We argue that RF-based methods have the potential to overfit to previously seen data which is
        dangerous when applied to imputation
        in classical inference studies. New imputation methods developed with this class of estimators require careful
        evaluation w.r.t their impact on parameter estimation. We
