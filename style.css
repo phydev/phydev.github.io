@@ -403,10 +403,11 @@ a.footnote:hover span {
   height: auto;
 }
 
-.caption {
+caption {
   text-align: center;
   margin-top: 10px;
   font-style: italic;
+
 }
 
 .content-container {
