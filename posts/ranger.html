@@ -74,7 +74,7 @@
 <main id="main">
     <h1>A cautionary tale on imputation with random forest</h1>
     
-    <h2>Introduction</h2>
+    <h2>Missing data and imputation methods</h2>
     <p> Missing data is ubiquitous in data science and has the potential to significantly impact results if not handled
         properly. Historically, three primary mechanisms for missing data have been defined: </p>
     
@@ -111,15 +111,15 @@
        approach as it attempts to model the whole joint distribution of the data.</p>
     
     <p>The first aspect means that because of the nature of random forest, miceRanger allows the introduction of
-       non-linearities and agnostic interactions during the imputation process. This comes with the price of a higher
-       sample size requirement for reducing overfitting and a higher number of hyperparameters to be tuned for the
+       non-linearities and agnostic interactions during the imputation process. This comes with the price of a larger
+       sample size requirement for reducing overfitting and more hyperparameters to be tuned for the
        imputation. </p>
     
     <p>
         The aim of this analysis is: 1) compare the coefficient of determination \( R^2\) and 2)
-        regression coefficient estimates after MICE and miceRanger
-        imputation. We will determine if miceRanger can provide unbiased estimates and how it compares
-        with classical MICE estimates.
+        regression coefficient estimates \( \hat{\beta}_i\) after MICE and miceRanger
+        imputation. We will verify if miceRanger can provide unbiased estimates for a linear regression model fitted
+        on MCAR data and how it compares with classical MICE estimates.
     </p>
     
     <h2>Simulation</h2>
@@ -137,29 +137,34 @@
        \varepsilon \sim \mathcal{N}(0,\,\sigma_{\varepsilon}^{2})\) in the model. The three complete sets of data
        provide linear models with \(\hat{R^2} = (0.2, 0.5, 0.8) \) respectively. In summary, the data points are
        generated according to a linear model with specified means, standard deviations, coefficients, and \( R^2 \)
-       value. Fig. 1 depicts the response and independent variable distributions and their relationship. </p>
-    
-    <center>
-        <img src="/posts/figs/pairplot.png" alt="Pairplot" class="center" style="width:40%">
-        <caption> Figure 1: Pair plot showing the response \(y \) and independent variables \( (x1, x2)\) distributions.
-        </caption>
-    </center>
-    
-    
-    <p> We then apply amputation to introduce missing values in the simulated data using the MCAR mechanism. For each
+       value. Fig. 1 (a) depicts the response and independent variable distributions and their relationship. </p>
+        <p> We then apply amputation to introduce missing values in the simulated data using the MCAR mechanism. For each
         dataset we create three different versions with missing rates of \(0.2\), \(0.5\) and \(0.8\), accounting for
-        900 datasets in total. In Fig. 2 we show the missing pattern used to generate the amputed data, only one
+        900 datasets in total. In Fig. 2 (b) we show the missing pattern used to generate the amputed data, only one
         missing variable is allowed per observation. In Table 1 we summarise the different conditions explored in this
         study.</p>
-    <center>
-        <img src="/posts/figs/missing_pattern.png"
+     <div class="figure-container">
+         (a)
+        <img src="/posts/figs/pairplot.png" alt="Pairplot" class="center" style="width:40%">
+         
+         (b)
+         <img src="/posts/figs/missing_pattern.png"
              alt="Missing pattern used in the data. Only one variable is missing per observation."
              class="center"
              style="width:40%">
-        <caption> Figure 2: Missing patterns used in the amputation. Only one missing variable per observation is
+    </div>
+    <caption> Figure 1: (a) Pair plot showing the response
+              and independent variables
+              distributions. (b) Missing patterns used in the amputation. Only one missing variable per observation is
                   allowed.
         </caption>
-    </center>
+    <p></p>
+    
+
+    
+        
+      
+   
     <p></p>
     
     
@@ -221,52 +226,87 @@
     
     <h2>Results and discussion</h2>
     
-    <p>The Figure 3 and 4 show coefficient of determinations for different correlations and
+    <p>The Figure 2 shows coefficient of determinations for different correlations and
        missingness degree estimated with linear regression after
-    MICE and miceRanger imputation, respectively.
+    MICE and miceRanger imputation.
     For MICE, we see that the confidence intervals always cover the true value of \(R^2\) and the mean estimate is
         close to the true value independent of the strength of the correlation between the response and covariates,
        and the amount of missingness in the data. The confidence intervals are bigger for higher amount of
        missingness due to increased uncertainty.
     </p>
-        <center><img src="/posts/figs/mice_results.png" alt="Results with mice" class="center" style="width:40%">
-        <caption> Figure 3: Coefficient of determination for each of the 9 conditions and the 95% confidence
-                  intervals after MICE imputation.
+    <div class="figure-container">
+        <img src="/posts/figs/mice_results.png" alt="Results with mice" class="center" style="width:40%">
+    <img src="/posts/figs/ranger_results.png" alt="Results with miceRanger." class="center" style="width:40%">
+    </div>
+    <caption> Figure 2: Coefficient of determination for each of the 9 conditions and the 95% confidence
+                  intervals after MICE imputation (left) and miceRanger (right). The true value is depicted by dashed
+              lines.
         </caption>
-    </center>
-    
+    <p></p>
     <p> On the other hand, we can see that performances obtained with miceRanger are always overestimated, which
         indicates that the imputation method is introducing a stronger correlation than the true relationship in the
         data. This problem becomes exacerbated for high amount of missingness (50 and 75%) where the true
         value is not covered by the confidente interval.</p>
     
-
-    <center>
-        <img src="/posts/figs/ranger_results.png" alt="Results with miceRanger." class="center" style="width:40%">
-        <caption> Figure 4: Coefficient of determination for each of the 9 conditions and the 95% confidence
-                  intervals after miceRanger imputation.</caption>
-    </center>
     
     <p>To investigate this problem further we run another simulation where there is no correlation between the response
-       variable and the covariate. We trained random forest and linear regression models. Fig. 5 shows the predicted
+       variable and the covariate. We trained random forest and linear regression models. Fig. 3 shows the predicted
        points along with the original data for both methods. We see that Random Forest overfitted to the training data
         and predicts values close to the original data, even though there is no correlation in the original data. The
        \(\hat{R^2}\) are \(0.80\) and \(0.00016\) for RF and LR, respectively.</p>
     </p>
-            <center><img src="/posts/figs/overfitting.png"
+    <img src="/posts/figs/overfitting.png"
                          alt="Shows two figures with predictions from random forest and linear regression on a dataset with no correlation."
                          class="center"
                          style="width:40%">
-        <caption> Figure 5: .
+        <caption> Figure 3: The true data is depicted in red and the predictions in blue for random forest (left) and
+                  linear regression (right).
         </caption>
-    </center>
+
+     <p></p>
+    
+    <p>Fig. 4 shows how estimated parameters are affected when data is imputed using MICE (left) and miceRanger (right)
+       with data generated under intermediate correlation, R² = 0.50. For MICE, we see that the confidence interval
+       becomes larger as the amount of missingness increases, but the true value remains covered. On the other hand,
+       estimates from miceRanger exhibit a huge effect overestimation and small confidence intervals that do not cover
+       the true value, indicating that the imputation method introduces a stronger correlation.
+    </p>
+    
+    
+    <div class="figure-container">
+        <figure class="figure">
+            <img src="/posts/figs/mice_beta1_r2_05.png" alt="Figure 1">
+           
+        </figure>
+        <figure class="figure">
+            <img src="/posts/figs/ranger_beta1_r2_05.png" alt="Figure 2">
+  
+        </figure>
+        
+    </div>
+     <figcaption>Figure 4: Estimated parameter values obtained using MICE (left) and miceRanger (right) for data with
+                  intermediate correlation \(R² = 0.50\). Dashed lines represent the true
+                 value and CI estimated without missing values.</figcaption>
+    
     
     <h2>Conclusion</h2>
     
-    <p>We argue that Random forest based methods can overfit to previously seen data which makes them not suitable to
-       be used for imputation
-       in classical inference studies. We observed that spurious correlations and interactions can be introduced
+    <p>We argue that Random forest based methods have the potential to overfit to previously seen data which is
+       dangerous when applied to imputation
+       in classical inference studies. New imputation methods developed with this class of estimators require careful
+       evaluation w.r.t their impact on parameter estimation. We
+       observed that spurious
+       correlations
+       and
+       interactions can be
+       introduced
        during the imputation phase, affecting results further in the analysis pipeline with high risk of bias. </p>
+    <p>We strongly advocate for directing efforts towards developing theoretical guarantees for newly created ML-based
+       imputation methods. It is essential that we bridge the gap between the rapid pace of tool development and the
+       need for rigorous theoretical foundations, including statistical guarantees. By doing so, we can ensure the
+       scientific community has confidence in the reliability and effectiveness of these innovative approaches,
+       ultimately accelerating their adoption and impact.
+    </p>
     
     <h2>References</h2>
 <p>Mitra, R., McGough, S.F., Chakraborti, T. et al. Learning from data with structured missingness. Nat Mach
