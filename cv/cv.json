@@ -122,12 +122,23 @@
         "description": "Probabilitistic framework for predicting conditional outcomes",
         "type": "article",
         "date": "2024",
-        "url": "#",
-        "publisher": "",
-        "pre-print": "#",
+        "url": "https://doi.org/10.1101/2024.12.16.24319067",
+        "publisher": "medRxiv",
+        "pre-print": "https://doi.org/10.1101/2024.12.16.24319067",
         "id": "bd4predict"
 
-    },    
+    },
+    {
+        "title": "External validation of prognostic and predictive gene signatures in head and neck cancer patients",
+        "authors": "E. I. F. Fossen; M. Moreira-Soares; ..., S.Cavalieri.",
+        "description": "Validation of prognostic models developed and gene signatures in head and neck cancer patients.",
+        "type": "article",
+        "date": "2024",
+        "url": "https://doi.org/10.1101/2024.09.24.24314278",
+        "publisher": "medRxiv",
+        "pre-print": "https://doi.org/10.1101/2024.09.24.24314278",
+        "id": "bd4predict"
+    },
 	{
 	"title": "Quality of life in head and neck cancer survivors: the Big Data for Quality of Life study",
 	"authors": "M. Moreira-Soares; E. I. F. Fossen; K. Taylor; S. Singer; K. Hurley; S. Thomas; M. Pring; A. Ness; S. Cavalieri; C. Vener; L. López Pérez; M. F. Cabrera-Umpierrez; G. Fico; A. Frigessi; L. Licitra; M. LeBlanc",
