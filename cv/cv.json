@@ -117,13 +117,13 @@
     },
     "publications":[
     {
-        "title": "Joint probability approach for prognostic prediction of conditional outcomes: application to quality of life in head and neck cancer survivors",
+        "title": "Joint probability framework for the development and validation of a prognostic model for the conditional outcome of quality of life: a retrospective study in historical European cohorts of survivors of head and neck cancer",
         "authors": "M. Moreira-Soares; E. I. F. Fossen; ..., M. LeBlanc.",
         "description": "Probabilitistic framework for predicting conditional outcomes",
         "type": "article",
-        "date": "2024",
-        "url": "https://doi.org/10.1101/2024.12.16.24319067",
-        "publisher": "medRxiv",
+        "date": "2026",
+        "url": "https://doi.org/10.1016/j.landig.2025.100976",
+        "publisher": "The Lacent Digital Health",
         "pre-print": "https://doi.org/10.1101/2024.12.16.24319067",
         "id": "bd4predict"
 
